@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <script>
-        if (location.hostname == "localhost" || location.hostname == "127.0.0.1") {
-            document.write("<base href='/'>");
-        }
-        else {
-            document.write("<base href='www.ryanstudio.dev/'>");
-        }
+        (function(){
+      const base = document.createElement('base');
+      base.href = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+        ? '/'
+        : 'https://www.ryanstudio.dev/'; // absolute URL with protocol and trailing slash
+      document.head.appendChild(base);
+    })();
     </script>
 
 
     <meta name="google-adsense-account" content="ca-pub-8030717046519441">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Removing caching-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
 
     <title>RyanStudio.dev</title>
@@ -23,7 +29,7 @@
 
     <link rel="stylesheet" href="src/shared/css/mainpagestyle.css">
 
-    <script src="src/shared/js/load_ui.js"></script>
+    <script src="src/shared/js/load_ui.js" defer></script>
 
 </head>
 <body>
