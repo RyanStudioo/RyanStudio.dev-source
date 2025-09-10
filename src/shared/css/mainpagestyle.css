@@ -21,9 +21,7 @@ nav.nav-bar {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: var(--primary-background-colour);
     color: var(--primary-text-colour);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-decoration: none !important;
 }
 
@@ -38,23 +36,70 @@ nav.nav-bar {
     margin-bottom: 0px;
     text-decoration: none !important;
     font-size: 20px;
-    
+    align-items: center;
+    display: flex;
+}
+
+.nav-bar a:hover {
+    color: blue;
+    transition: 0.5s;
+    text-decoration: none !important;
 }
 
 .nav-bar a {
     text-decoration: none !important;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    line-height: 2.3;
+    
+}
+
+.nav-bar a strong {
+    position: relative;
+    top: -5px; 
 }
 
 .logo {
-    height: 50px;
-    margin-right: 10px
-}
-
-.navbar-brand:hover {
-    color: inherit;
-    text-decoration: none !important;
+    height: 80px;
+    margin-right: 20px;
 }
 
 .white-text {
     color: white;
+}
+
+.transparent {
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 10000;
+  position: absolute;
+}
+
+
+.slide-in {
+  position: relative;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-container {
+    position: relative;
+    text-align:center;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: black;
 }
