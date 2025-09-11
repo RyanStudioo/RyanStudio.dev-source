@@ -32,7 +32,13 @@
     <div id="nav-bar"></div>
 
     <script>
-        loadUI(transparent=true);
+        setTimeout(() => {
+        if (window.loadUI) {
+            window.loadUI(true);
+        } else {
+            console.error("loadUI is not available on window.");
+        }
+    }, 0);
     </script>
     <figure class="image-container">
         <img src="src/images/drawn_piggy.png" alt="Piggy" class="main-image">

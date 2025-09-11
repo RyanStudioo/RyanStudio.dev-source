@@ -33,4 +33,3 @@ function toggleTheme(){
 
 window.loadUI = loadUI;
 window.toggleTheme = toggleTheme;
-loadUI(true);
