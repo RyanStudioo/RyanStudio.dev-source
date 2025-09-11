@@ -31,5 +31,14 @@ function toggleTheme(){
     document.body.classList.toggle("dark-mode");
 }
 
+function waitForLoadUI() {
+        if (window.loadUI) {
+            window.loadUI(true);
+        } else {
+            setTimeout(waitForLoadUI, 50); // Try again in 50ms
+        }
+    }
+
 window.loadUI = loadUI;
 window.toggleTheme = toggleTheme;
+window.waitForLoadUI = waitForLoadUI;

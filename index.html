@@ -32,13 +32,14 @@
     <div id="nav-bar"></div>
 
     <script>
-        setTimeout(() => {
-        if (window.loadUI) {
-            window.loadUI(true);
+        function waitForWaitForLoadUI() {
+        if (window.waitForLoadUI) {
+            window.waitForLoadUI();
         } else {
-            console.error("loadUI is not available on window.");
+            setTimeout(waitForWaitForLoadUI, 50);
         }
-    }, 0);
+        }
+        waitForWaitForLoadUI();
     </script>
     <figure class="image-container">
         <img src="src/images/drawn_piggy.png" alt="Piggy" class="main-image">
