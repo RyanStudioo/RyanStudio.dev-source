@@ -10,10 +10,11 @@ function parseCookies(cookieString) {
 
 export function setTheme(darkmode = true) {
     localStorage.setItem('darkmode', darkmode ? 'true' : 'false');
+
 }
 
 export function getTheme() {
-    return localStorage.getItem('darkmode') === 'true';
+    return localStorage.getItem('darkmode') === 'true' | localStorage.getItem('darkmode') === null;
 }
 
 window.getTheme = getTheme;

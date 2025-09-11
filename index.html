@@ -31,15 +31,9 @@
     <script src="src/shared/js/load_ui.js" type="module"></script>
     <div id="nav-bar"></div>
 
-    <script>
-        function waitForWaitForLoadUI() {
-        if (window.waitForLoadUI) {
-            window.waitForLoadUI();
-        } else {
-            setTimeout(waitForWaitForLoadUI, 50);
-        }
-        }
-        waitForWaitForLoadUI();
+    <script type="module">
+        import {loadUI} from './src/shared/js/load_ui.js';
+        loadUI();
     </script>
     <figure class="image-container">
         <img src="src/images/drawn_piggy.png" alt="Piggy" class="main-image">
