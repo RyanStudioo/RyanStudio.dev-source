@@ -8,15 +8,12 @@ function parseCookies(cookieString) {
         }, {});
 }
 
-export function setTheme(darkmode=true) {
-    const expires = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
-    document.cookie = `darkmode=${darkmode}; expires=${expires}; path=/`;
+export function setTheme(darkmode = true) {
+    localStorage.setItem('darkmode', darkmode ? 'true' : 'false');
 }
 
 export function getTheme() {
-    let cookies = parseCookies(document.cookie);
-    // Return true only if the cookie exists and is exactly 'true'
-    return cookies.darkmode === 'true';
+    return localStorage.getItem('darkmode') === 'true';
 }
 
 window.getTheme = getTheme;
