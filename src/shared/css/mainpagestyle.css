@@ -56,7 +56,7 @@ nav.nav-bar {
     position: relative
 }
 
-.nav-bar a::after {
+.nav-bar ul a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -69,8 +69,8 @@ nav.nav-bar {
   transform-origin: center;
 }
 
-.nav-bar a:hover::after,
-.nav-bar a:focus::after {
+.nav-bar ul a:hover::after,
+.nav-bar ul a:focus::after {
   opacity: 1;
   transform: scale(1);
 }
