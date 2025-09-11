@@ -4,3 +4,17 @@
     object-fit: cover;
     object-position: 50% 20%;
 }
+
+.article-container {
+    width: 50%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.25rem;
+}
