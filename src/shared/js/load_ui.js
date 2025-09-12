@@ -42,7 +42,6 @@ function toggleTheme(){
         setTheme(false);
         console.log("Light mode enabled");
     }
-    console.log(localStorage.getItem("darkmode"));
 }
 
 function waitForLoadUI(transparent=true) {
