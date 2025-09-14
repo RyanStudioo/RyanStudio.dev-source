@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/src/shared/css/headers.css" />
 
 <nav class="nav-bar">
-  <ul class="nav-links">
-    <li class="image-text-container">
-    <img src="/src/images/icons/icon.png" alt="Logo" class="logo" />
+  <img src="/src/images/icons/icon.png" alt="Logo" class="logo" />
       <a href="">
         <strong>RyanStudio.dev</strong>
       </a>
+  <ul class="nav-links" id="nav-links">
+    <li class="image-text-container">
     </li>
     <li>
       <a href="/projects">
@@ -42,6 +42,25 @@
     </a>
     <a href="https://youtube.ryanstudio.dev" target="_blank" aria-label="Visit our YouTube">
       <img src="src\images\icons\youtube-play-button-play-video-youtube-logo-svgrepo-com.svg" alt="YouTube Logo" class="brand-logo" />
+    </a>
   </div>
+  <div class="hamburger" aria-hidden="false">
+      <div class="hamburger-wrapper">
+        <button id="hamburger" class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menuDropdown">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- dropdown placed inside wrapper so it anchors to the button -->
+        <div class="dropdown-wrapper">
+          <nav class="dropdown" id="menuDropdown" role="menu" aria-hidden="true">
+            <ul>
+              <a href="/projects/" role="menuitem" tabindex="-1"><li>Projects</li></a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
 
 </nav>
