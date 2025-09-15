@@ -18,3 +18,27 @@ h1 {
 p {
     font-size: 1.25rem;
 }
+
+.logo-article {
+    height: 8rem;
+    object-fit: contain;
+}
+
+section {
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.seperator-container {
+    display: flex;
+    vertical-align: center;
+}
+
+.seperator {
+    height: 5px;
+    width: 40vw;
+    background-color: var(--primary-text-colour);
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+}

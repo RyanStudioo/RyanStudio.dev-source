@@ -25,7 +25,7 @@ nav.nav-bar {
 }
 
 .nav-bar a:hover {
-    color: blue;
+    color: rgb(47, 47, 248);
     text-decoration: none !important;
     transition: 1s;
 }
@@ -89,7 +89,7 @@ nav.nav-bar {
   width: 4em;
   height: 2.2em;
   border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 /* Hide default HTML checkbox */
