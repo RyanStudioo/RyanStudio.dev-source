@@ -3,4 +3,12 @@
     --primary-text-colour: #f0f0f0;
     --diminished-background-colour: #393b40;
     --shadow: #1f2024
-} 
+}
+
+:root[data-theme="light"],
+html[data-theme="light"] {
+    --primary-background-colour:white;
+    --primary-text-colour: black;
+    --diminished-background-colour: #e5e5e6;
+    --shadow: rgb(192, 188, 188);
+}

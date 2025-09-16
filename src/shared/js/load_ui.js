@@ -1,10 +1,11 @@
 import {getTheme, setTheme} from './cookies.js';
 
 function applySavedTheme() {
+  const doc = document.documentElement
     if (!getTheme()) {
-        document.body.classList.add("dark-mode");
+        doc.setAttribute('data-theme', "light")
     } else {
-        document.body.classList.remove("dark-mode");
+        doc.setAttribute('data-theme', 'dark')
     }
 }
 
@@ -100,12 +101,13 @@ function hamburger() {
 function toggleTheme(){
     const themeCheckbox = document.getElementById("theme-checkbox");
     const isDark = themeCheckbox.checked
+    const doc = document.documentElement
     if (!isDark) {
-        document.body.classList.remove("dark-mode");
+        doc.setAttribute('data-theme', 'dark')
         setTheme(true);
         console.log("Dark mode enabled");
     } else {
-        document.body.classList.add("dark-mode");
+        doc.setAttribute('data-theme', "light")
         setTheme(false);
         console.log("Light mode enabled");
     }

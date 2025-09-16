@@ -2,7 +2,8 @@
     "oracle": {
         "title": "Oracle AI",
         "description": "Oracle AI is an artificial intelligence that is capable of long term memory, tool usage, and more!<br>Oracle has been trained on datasets such as community submissions, wikipedia articles, and more!",
-        "image": "/projects/images/oracle.png"
+        "image": "/projects/images/oracle.png",
+        "href": "/projects/oracle"
     },
     "bluemapwrapper": {
         "title": "BlueMapWrapper",

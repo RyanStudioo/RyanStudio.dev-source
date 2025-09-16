@@ -41,7 +41,7 @@ body {
     scroll-snap-align: start;
     flex-shrink: 0;
     cursor: pointer;
-    transition: transform 0.2s 
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.2s
 }
 
 .article-container:hover {
@@ -82,8 +82,9 @@ body {
 }
   .article-container p {-webkit-line-clamp: 3}
   .article-slider { 
-    padding: 0 0.5rem; 
+    padding: 3rem 2rem;
     scroll-snap-type: none;
-    width: 100vw
+    width: 100vw;
+    gap: 2rem;
 }
 }
