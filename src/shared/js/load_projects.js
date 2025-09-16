@@ -10,6 +10,7 @@ function loadArticle(articleName) {
 
 export function createArticleSliderElement(article) {
     try {
+    const href = document.createElement('a')
     const section = document.createElement('section');
     section.classList.add('article-container');
     let image = article.image;

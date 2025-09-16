@@ -31,9 +31,10 @@
     <article>
         <section>
             <h1>Projects</h1>
-            <p>Here are some of my projects! Click on any of them to learn more.</p>
+            <p>Here are some of my projects! Click on any of them to learn more..</p>
         </section>
     </article>
+
     <article id="articles-slider" class="article-slider">
         <script src="/src/shared/js/load_projects.js" type="module"></script>
         <script type="module">
@@ -44,7 +45,13 @@
             for (const [key, value] of Object.entries(articles)) {
                 let new_element = createArticleSliderElement(value)
                 parent.appendChild(new_element);
+            parent.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                parent.scrollLeft += e.deltaY
+            })
+
             }
+            
         </script>
     </article>
 </body>

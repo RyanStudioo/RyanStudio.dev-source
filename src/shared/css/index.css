@@ -1,5 +1,5 @@
 .main-image {
-    height: 70vh;
+    height: 65vh;
     width: 100%;
     object-fit: cover;
     object-position: 50% 20%;
@@ -8,11 +8,14 @@
 .article-container {
     width: 50%;
     margin: auto;
+    justify-content: center;
 }
 
 h1 {
     font-size: 4rem;
     margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
 }
 
 p {
