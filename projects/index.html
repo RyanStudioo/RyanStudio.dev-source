@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/src/shared/css/root.css">
     <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
     <link rel="stylesheet" href="/src/shared/css/index.css">
+    <link rel="stylesheet" href="/projects/styles/mainpage.css">
 </head>
 <body>
     <script src="/src/shared/js/load_ui.js" type="module"></script>
@@ -25,7 +26,26 @@
 
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';
-        loadUI();
+        loadUI(false);
     </script>
+    <article>
+        <section>
+            <h1>Projects</h1>
+            <p>Here are some of my projects! Click on any of them to learn more.</p>
+        </section>
+    </article>
+    <article id="articles-slider" class="article-slider">
+        <script src="/src/shared/js/load_projects.js" type="module"></script>
+        <script type="module">
+            import {loadArticles, createArticleSliderElement} from "/src/shared/js/load_projects.js";
+            const articles = await loadArticles();
+            console.log(articles);
+            const parent = document.getElementById("articles-slider");
+            for (const [key, value] of Object.entries(articles)) {
+                let new_element = createArticleSliderElement(value)
+                parent.appendChild(new_element);
+            }
+        </script>
+    </article>
 </body>
 </html>

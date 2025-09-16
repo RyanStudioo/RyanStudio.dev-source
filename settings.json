@@ -1,0 +1,6 @@
+    {
+        "liveServer.settings.rewriterules": {
+            "^/learn$": "/learn.html",
+            "^/projects/testing$": "/projects/testing.html"
+        }
+    }

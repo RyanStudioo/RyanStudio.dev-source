@@ -11,7 +11,7 @@ function applySavedTheme() {
 applySavedTheme();
 
 export function loadUI(transparent=true) {
-    fetch('src/shared/html/nav-bar.html')
+    fetch('/src/shared/html/nav-bar.html')
     .then(response => response.text())
     .then(data => {
     var navbar = document.getElementById("nav-bar")
