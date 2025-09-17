@@ -1,13 +1,9 @@
 {
     "oracle": {
         "title": "Oracle AI",
-        "description": "Oracle AI is an artificial intelligence that is capable of long term memory, tool usage, and more!<br>Oracle has been trained on datasets such as community submissions, wikipedia articles, and other sources, giving it the unique ability to learn and comment about fictional stories and events as soon as they happen!",
+        "description": "Oracle AI is an artificial intelligence on discord that is capable of long term memory, tool usage, and more!<br>Oracle has been trained on datasets such as community submissions, wikipedia articles, and other sources, giving it the unique ability to learn and comment about fictional stories and events as soon as they happen!",
         "image": "/projects/images/oracle.png",
-        "href": "/projects/oracle",
-        "metadata": {
-            "links": {
-            }
-        }
+        "href": "/projects/oracle"
     },
     "bluemapwrapper": {
         "title": "BlueMapWrapper",

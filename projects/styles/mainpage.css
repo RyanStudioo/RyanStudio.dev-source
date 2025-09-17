@@ -73,7 +73,7 @@ body {
     -webkit-line-clamp: 4;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 760px) {
   .article-container {
     --size: 18rem; 
     flex: none; 
