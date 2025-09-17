@@ -5,7 +5,8 @@
         "image": "/projects/images/oracle.png",
         "href": "/projects/oracle",
         "metadata": {
-            
+            "links": {
+            }
         }
     },
     "bluemapwrapper": {
