@@ -2,6 +2,6 @@
     "name": "ryanstudiodev",
     "compatibility_date": "2025-09-17",
     "assets" : {
-        "directory": "./main"
+        "directory": "."
     }
 }
