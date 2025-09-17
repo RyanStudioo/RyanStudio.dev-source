@@ -4,8 +4,9 @@ export async function loadArticles() {
     return articles;
 }
 
-function loadArticle(articleName) {
-
+export async function getArticle(articleName) {
+    const response = await loadArticles()
+    return response[articleName]
 }
 
 export function createArticleSliderElement(article) {

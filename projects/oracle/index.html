@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="/src/shared/js/baseurl.js"></script>
+
+
+    <meta name="google-adsense-account" content="ca-pub-8030717046519441">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+
+    <title>Oracle - RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/projects/styles/articlestyles.css">
 </head>
 <body>
+    <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <div id="nav-bar"></div>
+
+    <main class="main-container">
+        <img id="main-image" class="main-article-image">
+        <div class="article-section">
+            <aside class="side-bar">
+
+            </aside>
+            <article class="main-article">
+                <section>
+                    <h1 id="title" class="article-title"></h1>
+                    <p id="description" class="article-description"></p>
+                </section>
+            </article>
+        </div>
+    <script type="module">
+        import {loadUI} from '/src/shared/js/load_ui.js';
+        loadUI(false);
+        import {getArticle} from '/src/shared/js/load_projects.js'
+        const response = await getArticle("oracle")
+        const mainImage = response.image
+        document.getElementById('main-image').src = mainImage
+        document.getElementById('title').textContent = response.title
+        document.getElementById('description').innerHTML = response.description
+   </script>
+    </main>
+
     
 </body>
 </html>

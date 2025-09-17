@@ -1,0 +1,59 @@
+.main-container {
+    width: 100%;
+}
+
+.article-section {
+    display: flex;
+    margin: auto;
+}
+
+.main-article {
+    width: 40%;
+    display: flex;
+    margin-left: 20%;
+}
+
+.side-bar {
+    width: 20rem;
+    height: 5rem;
+    background-color: var(--diminished-background-colour);
+    order: 2;
+    margin: auto;
+    margin-top: none;
+    border-radius: 1.5rem;
+}
+
+.main-article-image {
+    height: 65vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    user-select: none;
+    -webkit-user-drag: none
+}
+
+.article-title {
+    font-size: 5rem;
+    margin: 0px;
+}
+
+.article-description {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+    .article-section {
+        flex-direction: column;
+    }
+
+    .side-bar {
+        order: inherit;
+        margin: 2rem auto;
+        width: 80%;
+    }
+
+    .main-article {
+        margin: auto;
+        width: 80%;
+    }
+}

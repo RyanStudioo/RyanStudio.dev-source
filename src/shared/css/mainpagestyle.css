@@ -76,3 +76,10 @@ body {
   text-decoration: none !important;
   color: inherit
 }
+
+.main-image {
+    height: 65vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
