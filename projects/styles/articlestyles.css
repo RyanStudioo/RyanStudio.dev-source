@@ -45,7 +45,6 @@
 
 .side-bar a:after {
     font: var(--fa-font-solid);
-    font-weight: 900;
     content: "\f0c1";
     margin-left: 0.5rem;
 }
@@ -104,6 +103,10 @@
     font-size: 1.5rem;
     padding: 1rem 0rem;
     padding-bottom: 0rem;
+}
+
+.separator-bar {
+    width: 100%;
 }
 
 
