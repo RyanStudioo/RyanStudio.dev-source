@@ -31,12 +31,25 @@
                 <a href="./docs">Read The Docs!</a>
             </aside>
             <article class="main-article">
-                <section>
+                <section class="overview-section">
                     <h1 id="title" class="article-title"></h1>
                     <p id="description" class="article-description"></p>
                 </section>
-                <section>
-                    
+                <section class="feature-box-container" id="feature-box-container">
+                    <section class="feature-box">
+                        <h1>Varying Personality</h1>
+                        <p>Oracle will vary its personality based on how you speak to it, the message rating system is used to change oracle's personality over time</p>
+                    </section>
+                    <section class="feature-box">
+                        <h1>Long Term Memory</h1>
+                        <p>Oracle is able to recall a large amount of memories based on selected inputs by its developers, 
+                            community inputs, webscraping, and more!
+                        </p>
+                    </section>
+                    <section class="feature-box">
+                        <h1>Image Vision</h1>
+                        <p>Oracle can see and react to images you send to it!</p>
+                    </section>
                 </section>
             </article>
         </div>
@@ -49,6 +62,14 @@
         document.getElementById('main-image').src = mainImage
         document.getElementById('title').textContent = response.title
         document.getElementById('description').innerHTML = response.description
+
+        const parent = document.getElementById("feature-box-container")
+
+        const width = parent.offsetWidth
+        parent.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                parent.scrollLeft += e.deltaY 
+            })
    </script>
     </main>
 

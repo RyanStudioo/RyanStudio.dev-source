@@ -23,7 +23,7 @@ body {
     scroll-padding-left: 1rem; 
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 3rem 0rem;
+    padding: 3rem 1rem;
 }
 
 .article-container {

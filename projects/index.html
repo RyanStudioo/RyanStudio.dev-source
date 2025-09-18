@@ -40,13 +40,16 @@
             const parent = document.getElementById("articles-slider");
             for (const [key, value] of Object.entries(articles)) {
                 let new_element = createArticleSliderElement(value)
-                parent.appendChild(new_element);
-            parent.addEventListener("wheel", (e) => {
+            parent.appendChild(new_element);
+            }
+
+        const width = parent.offsetWidth
+        parent.addEventListener("wheel", (e) => {
                 e.preventDefault();
-                parent.scrollLeft += e.deltaY
+                parent.scrollLeft += e.deltaY 
             })
 
-            }
+
             
         </script>
     </article>
