@@ -59,7 +59,7 @@ body {
 
 .article-container h1 {
     font-size: 2.5rem;
-    margin: auto 0;
+    margin: 1rem 0;
 }
 
 .article-container p {
@@ -71,6 +71,14 @@ body {
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+}
+
+.projects-info h1 {
+    font-size: 4rem;
+}
+
+.projects-info p {
+    font-size: 2rem;
 }
 
 @media (max-width: 760px) {
