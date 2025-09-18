@@ -53,13 +53,30 @@
     margin-bottom: 5rem;
 }
 
-.main-article-image {
+.parallax-image-container {
+    overflow: hidden;
+    perspective: 1px;
     height: 65vh;
+    position: relative
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateZ(-1px) scale(2);
+  will-change: transform;
+  overflow: hidden;
+  inset: 0;
+}
+
+.main-article-image {
+    position: absolute;
     width: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
+    top: -50%;
+    left: 0;
     user-select: none;
-    -webkit-user-drag: none
+    -webkit-user-drag: none;
 }
 
 .article-title {

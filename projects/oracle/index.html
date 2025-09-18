@@ -23,7 +23,12 @@
     <div id="nav-bar"></div>
 
     <main class="main-container">
-        <img id="main-image" class="main-article-image">
+        <div class="parallax-image-container">
+            <div class="parallex-layer">
+                <img id="main-image" class="main-article-image">
+            </div>
+        
+        </div>
         <div class="article-section">
             <aside class="side-bar">
                 <h1>Links</h1>
@@ -79,6 +84,10 @@
                 e.preventDefault();
                 parent.scrollLeft += e.deltaY 
             })
+        window.addEventListener("scroll", () => {
+        const offset = window.scrollY * 0.5; // slower than scroll
+        document.querySelector(".main-article-image").style.transform = `translateY(${offset}px)`;
+        });
    </script>
     </main>
 
