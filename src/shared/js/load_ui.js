@@ -17,6 +17,19 @@ export function loadUI(transparent=true) {
     .then(data => {
     var navbar = document.getElementById("nav-bar")
     navbar.innerHTML = data;
+    navbar.querySelectorAll("script").forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) {
+        newScript.src = oldScript.src
+      }
+      if (oldScript.type) {
+        newScript.type = oldScript.type
+      }
+      if (oldScript.textContent) {
+        newScript.textContent = oldScript.textContent
+      }
+      navbar.appendChild(newScript);
+    })
     if (transparent) {
         navbar.classList.add("transparent");
     }

@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="/src/shared/css/headers.css" />
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0"></script>
+<script src="/src/shared/js/searchbar.js" type="module"></script>
+
+<script src="https://kit.fontawesome.com/e13cddd840.js" crossorigin="anonymous"></script>
+
 
 <nav class="nav-bar">
   <img src="/src/images/icons/icon.png" alt="Logo" class="logo" />
@@ -14,6 +19,33 @@
       </a>
     </li>
   </ul>
+
+
+  <div class="search-bar">
+    <div class="search-bar-results">
+    <input type="text" id="search-bar" placeholder="Search RyanStudio.dev..." >
+    <ul id="search-results">
+    </ul>
+    </div>
+    <script type="module">
+      import {debounce, initSearch, searchResults} from "/src/shared/js/searchbar.js"
+
+      await initSearch()
+
+      const searchBar = document.getElementById("search-bar")
+      const searchResultsList = document.getElementById("search-results")
+      const inputHandling = debounce(() => {
+        const query = searchBar.value.trim()
+        const results = query ? searchResults(query) : [];
+        let formattedResults = results.slice(0,3).map(result => `<li><a href="${result.href}">${result.title}</a></li>`).join('')
+        console.log(formattedResults)
+        console.log(results)
+        searchResultsList.innerHTML = formattedResults;
+      })
+
+      searchBar.addEventListener("input", inputHandling)
+    </script>
+  </div>
 
   <div class="float-right">
   <!-- From Uiverse.io by JustCode14 --> 

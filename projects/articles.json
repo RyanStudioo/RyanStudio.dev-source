@@ -8,11 +8,13 @@
     "bluemapwrapper": {
         "title": "BlueMapWrapper",
         "description": "BlueMapWrapper is a Python library that lets you easily interact with BlueMap Data, allowing you to easily parse markers, player locations, plugin data, and more!",
-        "image": "/projects/images/bluemaplogo.png"
+        "image": "/projects/images/bluemaplogo.png",
+        "href": "/projects/bluemapwrapper"
     },
     "ratmod": {
         "title": "Rat Mod",
         "description": "Rat mod is a Minecraft Fabric mod that adds rats, cheese, and more into your game!",
-        "image": "/projects/images/rat.png"
+        "image": "/projects/images/rat.png",
+        "href": "/projects/ratmod"
     }
 }
