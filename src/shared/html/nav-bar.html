@@ -39,10 +39,10 @@
         const results = query ? searchResults(query) : [];
         let formattedResults = results.slice(0,3).map(result => `
         <a href="${result.href}">
-          <li>
+          <div>
             <h1>${result.title}</h1>
             <p>${result.description}</p>
-          </li>
+          </div>
         </a>`).join('')
         console.log(formattedResults)
         console.log(results)

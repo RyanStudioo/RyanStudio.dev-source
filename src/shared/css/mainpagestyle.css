@@ -83,3 +83,31 @@ body {
     object-fit: cover;
     object-position: 50% 20%;
 }
+
+.parallax-image-container {
+    overflow: hidden;
+    perspective: 1px;
+    height: 65vh;
+    position: relative
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateZ(-1px) scale(2);
+  will-change: transform;
+  overflow: hidden;
+  inset: 0;
+}
+
+.parallex-top {
+    top: 0%
+}
+
+.parallex-center {
+    top: -50%
+}
+
+.parallex-bottom {
+    top: -100%
+}

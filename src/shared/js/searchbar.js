@@ -2,14 +2,21 @@ import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.esm.js";
 
 let fuse;
 
-export async function initSearch() {
-  const res = await fetch("/projects/articles.json");
+async function fetchAll() {
+  const res = await fetch("/src/pages.json");
   const json = await res.json();
+  var itemsArray = [];
+  for (const [key, value] of Object.entries(json)) {
+    itemsArray = itemsArray.concat(value)
+  }
+  return itemsArray
+}
 
-  const itemsArray = Array.isArray(json) ? json : Object.values(json);
+export async function initSearch() {
+  const itemsArray = await fetchAll()
 
   fuse = new Fuse(itemsArray, {
-    keys: ["title", "description"],
+    keys: ["title", "description", "tags"],
     threshold: 0.4,
   });
 }

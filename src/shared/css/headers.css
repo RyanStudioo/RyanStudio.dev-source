@@ -281,27 +281,36 @@ nav.nav-bar {
   padding-left: 0px;
   position: absolute;
   margin-top: 0.3rem;
+  width: 16rem
 }
 
 .search-bar-results h1 {
   font-size: 1rem;
+  margin: 0px;
+  margin-top: 0.4rem;
+  text-align: left;
 }
 
 .search-bar-results p {
   white-space: nowrap;
   overflow: hidden;
   font-size: 0.8rem;
-  max-width: 5rem;
+  max-width: 80%;
+  text-overflow: ellipsis;
 }
 
-.search-bar-results ul li {
+.search-bar-results ul div {
   margin: 0px;
   padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: left;
   text-overflow: ellipsis;
+  width: 100%;
+  justify-content: flex-start;
+  float: left
 }
+
 
 .search-bar-results ul > a:first-of-type{
   border-top-left-radius: 0.5rem;
@@ -316,12 +325,9 @@ nav.nav-bar {
 .search-bar-results ul a {
   background-color: var(--diminished-background-colour);
   color: var(--primary-text-colour);
-  padding: 1rem 0.5rem;
-  width: 11rem;
+  padding: 0.5rem 0.5rem;
+  width: inherit;
   display: flex;
-}
-
-.search-bar-results ul a {
   text-decoration: none !important;
   font-size: 1rem;
   color: var(--primary-text-colour);
@@ -329,7 +335,9 @@ nav.nav-bar {
 }
 
 .search-bar-results ul a:hover {
-  color: var(--primary-text-colour)
+  color: var(--primary-text-colour);
+  transform: scale(1.02);
+  transition: transform 0.1s ease-in-out
 }
 
 .search-bar-results ul a:before {
@@ -340,7 +348,7 @@ nav.nav-bar {
 }
 
 .search-bar input {
-  width: 10rem;
+  width: 15rem;
   height: 2rem;
   border-radius: 0.75rem;
   padding: 0 1rem;
