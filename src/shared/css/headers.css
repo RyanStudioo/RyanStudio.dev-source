@@ -322,6 +322,11 @@ nav.nav-bar {
   border-bottom-right-radius: 0.5rem;
 }
 
+@keyframes scaleDown {
+  from {transform: scale(1.02)}
+  to {transform: scale(1)}
+}
+
 .search-bar-results ul a {
   background-color: var(--diminished-background-colour);
   color: var(--primary-text-colour);
@@ -340,9 +345,16 @@ nav.nav-bar {
   transition: transform 0.1s ease-in-out
 }
 
-.search-bar-results ul a:before {
+.search-icon:before {
   font: var(--fa-font-solid);
   content: '\f002';
+  font-size: 0.8rem;
+  margin: 0px 0.5rem;
+}
+
+.history-icon:before {
+  font: var(--fa-font-solid);
+  content: '\f1da';
   font-size: 0.8rem;
   margin: 0px 0.5rem;
 }

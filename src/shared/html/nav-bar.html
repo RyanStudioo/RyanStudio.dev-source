@@ -28,8 +28,8 @@
     </ul>
     </div>
     <script type="module">
-      import {debounce, initSearch, searchResults, fetchAll, formatSearch} from "/src/shared/js/searchbar.js"
-
+      import {debounce, initSearch, searchResults, fetchAll, formatSearch, addListeners, getSearchHistory} from "/src/shared/js/searchbar.js"
+      const searchBarLimit = 5
       function clearResults() {
         searchResultsList.innerHTML = '';
       }
@@ -38,11 +38,12 @@
 
       const searchBar = document.getElementById("search-bar")
       const searchResultsList = document.getElementById("search-results")
-      const inputHandling = debounce(() => {
+      const inputHandling = debounce(async () => {
         const query = searchBar.value.trim()
-        const results = query ? searchResults(query) : [];
-        let formattedResults = results.slice(0,3).map(result => formatSearch(result)).join('')
+        const results = query ? searchResults(query) : await fetchAll();
+        let formattedResults = results.slice(0,searchBarLimit).map(result => formatSearch(result)).join('')
         searchResultsList.innerHTML = formattedResults;
+       await addListeners()
       })
 
       searchBar.addEventListener("input", inputHandling)
@@ -52,16 +53,17 @@
         e.stopPropagation();
         var fetched = await fetchAll()
         .then(items=> {
-        const fetched = items.slice(0,3).map(result => formatSearch(result)).join("")
+        const fetched = items.slice(0,searchBarLimit).map(result => formatSearch(result)).join("")
         searchResultsList.innerHTML = fetched
-      }
-        )
+      })
         } else {
           const results = query ? searchResults(query) : [];
-        let formattedResults = results.slice(0,3).map(result => formatSearch(result)).join('')
+        let formattedResults = results.slice(0,searchBarLimit).map(result => formatSearch(result)).join('')
         searchResultsList.innerHTML = formattedResults;
         }
+        await addListeners()
       })
+
       document.addEventListener('pointerdown', (e) => {
         if (!searchResultsList.contains(e.target)) clearResults();
       })

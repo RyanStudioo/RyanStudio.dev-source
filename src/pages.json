@@ -2,12 +2,14 @@
     "pages": 
         [
             {
+                "id": "homepage",
                 "title": "Home Page",
                 "description": "Main Home Page",
                 "tags": ["home", "main page", "index", "front"],
                 "href": "/"
             },
             {
+                "id": "projectspage",
                 "title": "Projects Page",
                 "description": "Navigate to different Projects",
                 "tags": ["projects"],
@@ -17,20 +19,23 @@
     "projectpages":
         [
             {
+                "id": "projects-oracle",
                 "title": "Oracle AI",
-                "description": "Smart Artificial Intelligence",
+                "description": "Project Page for Oracle AI",
                 "tags": ["oracle", "ai", "discord bot"],
                 "href": "/projects/oracle"
             },
             {
+                "id": "projects-bluemapwrapper",
                 "title": "BlueMap Wrapper",
-                "description": "Python Module for BlueMap",
+                "description": "Project Page for BlueMapWrapper",
                 "tags": ["pypi", "module", "blue map api"],
                 "href": "/projects/bluemapwrapper"
             },
             {
+                "id": "projects-ratmod",
                 "title": "Rat Mod",
-                "description": "Rats in Minecraft",
+                "description": "Project Page for Rat Mod",
                 "tags": ["rat", "cheese", "fabric", "mod", "minecraft mod"],
                 "href": "/projects/ratmod"
             }
@@ -38,12 +43,14 @@
     "sections": 
         [
             {
+                "id": "mainpage-whoami",
                 "title": "Who Am I",
                 "description": "I'm Ryan Studio! I am a Programmer, Youtuber, Musician, and more! Over here, you can check out the many projects I am working on, get documentation, or just stalk me if you'd like! ",
                 "tags": ["who", "ryan", "ryanstudio"],
                 "href": "/#whoami"
             },
             {
+                "id": "mainpage-whyryanstudio.dev",
                 "title": "Why RyanStudio.dev",
                 "description": "Well sadly, RyanStudio.com was taken by a pillow company, but thankfully, no other Ryanstudio's were developers, just pillow enthusiasts! I plan to use this site as a hub for my different projects such as my modules, other websites, and more! ",
                 "tags": ["why", "ryanstudio.dev", "pillow"],
@@ -53,18 +60,21 @@
     "links":
         [
             {
+                "id": "discordlink",
                 "title": "Discord Server",
                 "description": "Join our discord!",
                 "tags": ["discord", "help", "forum"],
                 "href": "https://discord.ryanstudio.dev"
             },
             {
+                "id": "youtubelink",
                 "title": "Youtube",
                 "description": "Watch me on Youtube!",
                 "tags": ["youtube", "videos", "content"],
                 "href": "https://youtube.ryanstudio.dev"
             },
             {
+                "id": "githublink",
                 "title": "Github",
                 "description": "Look at my Projects",
                 "tags": ["github", "code", "projects"],
