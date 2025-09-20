@@ -1,0 +1,75 @@
+{
+    "pages": 
+        [
+            {
+                "title": "Home Page",
+                "description": "Main Home Page",
+                "tags": ["home", "main page", "index", "front"],
+                "href": "/"
+            },
+            {
+                "title": "Projects Page",
+                "description": "Navigate to different Projects",
+                "tags": ["projects"],
+                "href": "/projects"
+            }
+        ],
+    "projectpages":
+        [
+            {
+                "title": "Oracle AI",
+                "description": "Smart Artificial Intelligence",
+                "tags": ["oracle", "ai", "discord bot"],
+                "href": "/projects/oracle"
+            },
+            {
+                "title": "BlueMap Wrapper",
+                "description": "Python Module for BlueMap",
+                "tags": ["pypi", "module", "blue map api"],
+                "href": "/projects/bluemapwrapper"
+            },
+            {
+                "title": "Rat Mod",
+                "description": "Rats in Minecraft",
+                "tags": ["rat", "cheese", "fabric", "mod", "minecraft mod"],
+                "href": "/projects/ratmod"
+            }
+        ],
+    "sections": 
+        [
+            {
+                "title": "Who Am I",
+                "description": "I'm Ryan Studio! I am a Programmer, Youtuber, Musician, and more! Over here, you can check out the many projects I am working on, get documentation, or just stalk me if you'd like! ",
+                "tags": ["who", "ryan", "ryanstudio"],
+                "href": "/#whoami"
+            },
+            {
+                "title": "Why RyanStudio.dev",
+                "description": "Well sadly, RyanStudio.com was taken by a pillow company, but thankfully, no other Ryanstudio's were developers, just pillow enthusiasts! I plan to use this site as a hub for my different projects such as my modules, other websites, and more! ",
+                "tags": ["why", "ryanstudio.dev", "pillow"],
+                "href": "/#whyryanstudio.dev"
+            }
+        ],
+    "links":
+        [
+            {
+                "title": "Discord Server",
+                "description": "Join our discord!",
+                "tags": ["discord", "help", "forum"],
+                "href": "https://discord.ryanstudio.dev"
+            },
+            {
+                "title": "Youtube",
+                "description": "Watch me on Youtube!",
+                "tags": ["youtube", "videos", "content"],
+                "href": "https://youtube.ryanstudio.dev"
+            },
+            {
+                "title": "Github",
+                "description": "Look at my Projects",
+                "tags": ["github", "code", "projects"],
+                "href": "https://github.ryanstudio.dev"
+            }
+        ]
+
+}
