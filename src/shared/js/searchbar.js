@@ -2,7 +2,7 @@ import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.esm.js";
 
 let fuse;
 
-async function fetchAll() {
+export async function fetchAll() {
   const res = await fetch("/src/pages.json");
   const json = await res.json();
   var itemsArray = [];
@@ -32,4 +32,13 @@ export function debounce(fn, delay = 300) {
     clearTimeout(timeoutId); // cancel previous timer
     timeoutId = setTimeout(() => fn(...args), delay);
   };
+}
+export function formatSearch(result) {
+   return `
+        <a href="${result.href}">
+          <div>
+            <h1>${result.title}</h1>
+            <p>${result.description}</p>
+          </div>
+        </a>`
 }

@@ -28,7 +28,11 @@
     </ul>
     </div>
     <script type="module">
-      import {debounce, initSearch, searchResults} from "/src/shared/js/searchbar.js"
+      import {debounce, initSearch, searchResults, fetchAll, formatSearch} from "/src/shared/js/searchbar.js"
+
+      function clearResults() {
+        searchResultsList.innerHTML = '';
+      }
 
       await initSearch()
 
@@ -37,19 +41,36 @@
       const inputHandling = debounce(() => {
         const query = searchBar.value.trim()
         const results = query ? searchResults(query) : [];
-        let formattedResults = results.slice(0,3).map(result => `
-        <a href="${result.href}">
-          <div>
-            <h1>${result.title}</h1>
-            <p>${result.description}</p>
-          </div>
-        </a>`).join('')
-        console.log(formattedResults)
-        console.log(results)
+        let formattedResults = results.slice(0,3).map(result => formatSearch(result)).join('')
         searchResultsList.innerHTML = formattedResults;
       })
 
       searchBar.addEventListener("input", inputHandling)
+      searchBar.addEventListener("click", async (e) => {
+        const query = searchBar.value.trim()
+        if (!query) {
+        e.stopPropagation();
+        var fetched = await fetchAll()
+        .then(items=> {
+        const fetched = items.slice(0,3).map(result => formatSearch(result)).join("")
+        searchResultsList.innerHTML = fetched
+      }
+        )
+        } else {
+          const results = query ? searchResults(query) : [];
+        let formattedResults = results.slice(0,3).map(result => formatSearch(result)).join('')
+        searchResultsList.innerHTML = formattedResults;
+        }
+      })
+      document.addEventListener('pointerdown', (e) => {
+        if (!searchResultsList.contains(e.target)) clearResults();
+      })
+      document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        clearResults();
+        searchBar.blur();
+      }
+      });
     </script>
   </div>
 
