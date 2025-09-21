@@ -8,7 +8,7 @@
     "bluemapwrapper": {
         "title": "BlueMapWrapper",
         "description": "BlueMapWrapper is a Python library that lets you easily interact with BlueMap Data, allowing you to easily parse markers, player locations, plugin data, and more!",
-        "image": "/projects/images/bluemaplogo.png",
+        "image": "https://media.forgecdn.net/avatars/298/392/637348970528404151.png",
         "href": "/projects/bluemapwrapper"
     },
     "ratmod": {

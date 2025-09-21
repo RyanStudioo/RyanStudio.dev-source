@@ -29,7 +29,7 @@
                 "id": "projects-bluemapwrapper",
                 "title": "BlueMap Wrapper",
                 "description": "Project Page for BlueMapWrapper",
-                "tags": ["pypi", "module", "blue map api"],
+                "tags": ["pypi", "module", "blue map", "wrapper"],
                 "href": "/projects/bluemapwrapper"
             },
             {
@@ -60,25 +60,32 @@
     "links":
         [
             {
-                "id": "discordlink",
+                "id": "link-discord",
                 "title": "Discord Server",
                 "description": "Join our discord!",
                 "tags": ["discord", "help", "forum"],
                 "href": "https://discord.ryanstudio.dev"
             },
             {
-                "id": "youtubelink",
+                "id": "link-youtube",
                 "title": "Youtube",
                 "description": "Watch me on Youtube!",
                 "tags": ["youtube", "videos", "content"],
                 "href": "https://youtube.ryanstudio.dev"
             },
             {
-                "id": "githublink",
+                "id": "link-github",
                 "title": "Github",
                 "description": "Look at my Projects",
                 "tags": ["github", "code", "projects"],
                 "href": "https://github.ryanstudio.dev"
+            },
+            {
+                "id": "link-github-bluemapwrapper",
+                "title": "GitHub:BlueMapWrapper",
+                "description": "Source Code for BlueMapWrapper",
+                "tags": ["github", "Blue Map", "Source Code"],
+                "href": "https://github.com/RyanStudioo/BlueMapWrapper"
             }
         ]
 

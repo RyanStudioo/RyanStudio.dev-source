@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/src/shared/js/baseurl.js"></script>
+
+
+    <meta name="google-adsense-account" content="ca-pub-8030717046519441">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <title>Oracle - RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/projects/styles/articlestyles.css">
+</head>
+<body>
+    <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <div id="nav-bar"></div>
+
+    <main class="main-container">
+        <div class="parallax-image-container">
+            <div class="parallex-layer">
+                <img id="main-image" class="main-article-image parallex-bottom">
+            </div>
+        
+        </div>
+        <div class="article-section">
+            <aside class="side-bar">
+                <h1>Links</h1>
+                <a href="https://github.com/RyanStudioo/BlueMapWrapper">Check out the project!</a>
+                <a href="./docs">Read The Docs!</a>
+            </aside>
+            <article class="main-article">
+                <section class="overview-section">
+                    <h1 id="title" class="article-title"></h1>
+                    <p id="description" class="article-description"></p>
+                </section>
+                <hr class="separator-bar">
+                <h1 class="article-title">Features</h1>
+                <section class="feature-box-container" id="feature-box-container">
+                    <section class="feature-box">
+                        <h1>Pythonic</h1>
+                        <p>BlueMapWrapper is made in a way that makes it very intuitive for Python</p>
+                    </section>
+                    <section class="feature-box">
+                        <h1>Object Oriented design</h1>
+                        <p>BlueMapWrapper was designed with OOP design principles in mind, making it scalable and easy to understand</p>
+                    </section>
+                </section>
+            </article>
+        </div>
+    <script type="module">
+        import {loadUI} from '/src/shared/js/load_ui.js';
+        loadUI(false);
+        import {getArticle} from '/src/shared/js/load_projects.js'
+        const response = await getArticle("bluemapwrapper")
+        const mainImage = response.image
+        document.getElementById('main-image').src = mainImage
+        document.getElementById('title').textContent = response.title
+        document.getElementById('description').innerHTML = response.description
+
+        const parent = document.getElementById("feature-box-container")
+
+        const width = parent.offsetWidth
+        parent.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                parent.scrollLeft += e.deltaY 
+            })
+        window.addEventListener("scroll", () => {
+        const offset = window.scrollY * 0.5; // slower than scroll
+        document.querySelector(".main-article-image").style.transform = `translateY(${offset}px)`;
+        });
+   </script>
+    </main>
+
+    
+</body>
+</html>

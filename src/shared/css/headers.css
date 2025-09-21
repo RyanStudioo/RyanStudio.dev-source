@@ -364,9 +364,11 @@ nav.nav-bar {
   height: 2rem;
   border-radius: 0.75rem;
   padding: 0 1rem;
-  background-color: var(--diminished-background-colour);
+  background-color: var(--primary-background-colour);
   color: var(--primary-text-colour);
   transition: background-color 0.3s, color 0.3s;
+  outline-color: var(--border-colour);
+  border-color: var(--border-colour);
 }
 
 .search-bar input:focus {
