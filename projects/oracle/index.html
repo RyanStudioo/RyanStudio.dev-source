@@ -30,10 +30,8 @@
         
         </div>
         <div class="article-section">
-            <aside class="side-bar">
+            <aside class="side-bar" id="side-bar">
                 <h1>Links</h1>
-                <a href="https://discord.ryanstudio.dev">Check out the project!</a>
-                <a href="./docs">Read The Docs!</a>
             </aside>
             <article class="main-article">
                 <section class="overview-section">
@@ -42,52 +40,16 @@
                 </section>
                 <hr class="separator-bar">
                 <h1 class="article-title">Features</h1>
-                <section class="feature-box-container" id="feature-box-container">
-                    <section class="feature-box">
-                        <h1>Varying Personality</h1>
-                        <p>Oracle will vary its personality based on how you speak to it, the message rating system is used to change oracle's personality over time</p>
-                    </section>
-                    <section class="feature-box">
-                        <h1>Long Term Memory</h1>
-                        <p>
-                            Oracle is able to recall a large amount of memories based on selected inputs by its developers, 
-                            community inputs, webscraping, and more!
-                        </p>
-                    </section>
-                    <section class="feature-box">
-                        <h1>Image Vision</h1>
-                        <p>Oracle can see and react to images you send it!</p>
-                    </section>
-                    <section class="feature-box">
-                        <h1>Accounts system</h1>
-                        <p>
-                            Users can pin messages to get Oracle to remember things about them or have a customised personality
-                        </p>
-                    </section>
-                </section>
+                <section class="feature-box-container" id="feature-box-container"></section>
+                <hr class="separator-bar">
+                <br style="margin-bottom: 5rem">
             </article>
         </div>
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';
+        import {createProjectsPage} from '/src/shared/js/load_projects.js';
         loadUI(false);
-        import {getArticle} from '/src/shared/js/load_projects.js'
-        const response = await getArticle("oracle")
-        const mainImage = response.image
-        document.getElementById('main-image').src = mainImage
-        document.getElementById('title').textContent = response.title
-        document.getElementById('description').innerHTML = response.description
-
-        const parent = document.getElementById("feature-box-container")
-
-        const width = parent.offsetWidth
-        parent.addEventListener("wheel", (e) => {
-                e.preventDefault();
-                parent.scrollLeft += e.deltaY 
-            })
-        window.addEventListener("scroll", () => {
-        const offset = window.scrollY * 0.5; // slower than scroll
-        document.querySelector(".main-article-image").style.transform = `translateY(${offset}px)`;
-        });
+        await createProjectsPage("oracle")
    </script>
     </main>
 

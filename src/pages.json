@@ -86,6 +86,13 @@
                 "description": "Source Code for BlueMapWrapper",
                 "tags": ["github", "Blue Map", "Source Code"],
                 "href": "https://github.com/RyanStudioo/BlueMapWrapper"
+            },
+            {
+                "id": "link-github-ratmod",
+                "title": "Github:RatMod",
+                "description": "Source Code for RatMod",
+                "tags": ["Rat Mod", "github", "source code"],
+                "href": "https://github.com/RyanStudioo/Rat-Mod"
             }
         ]
 

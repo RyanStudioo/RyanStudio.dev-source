@@ -3,18 +3,78 @@
         "title": "Oracle AI",
         "description": "Oracle AI is an artificial intelligence on discord that is capable of long term memory, tool usage, and more!<br>Oracle has been trained on datasets such as community submissions, wikipedia articles, and other sources, giving it the unique ability to learn and comment about fictional stories and events as soon as they happen!",
         "image": "/projects/images/oracle.png",
-        "href": "/projects/oracle"
+        "href": "/projects/oracle",
+        "sidebar": [
+            {
+                "title": "Check out the Project",
+                "href": "https://discord.ryanstudio.dev"
+            },
+            {
+                "title": "Read the Docs",
+                "href": "/docs/Oracle"
+            }
+        ],
+        "features": [
+            {
+                "title": "Varying Personality",
+                "description": "Oracle will vary its personality based on how you speak to it, the message rating system is used to change oracle's personality over time"
+            },
+            {
+                "title": "Long Term Memory",
+                "description": "Oracle is able to recall a large amount of memories based on selected inputs by its developers, community inputs, webscraping, and more!"
+            },
+            {
+                "title": "Image Vision",
+                "description": "Oracle can see and react to images you send it!"
+            },
+            {
+                "title": "Accounts System",
+                "description": "Users can pin messages to get Oracle to remember things about them or have a customised personality"
+            }
+        ]
     },
     "bluemapwrapper": {
         "title": "BlueMapWrapper",
         "description": "BlueMapWrapper is a Python library that lets you easily interact with BlueMap Data, allowing you to easily parse markers, player locations, plugin data, and more!",
         "image": "https://media.forgecdn.net/avatars/298/392/637348970528404151.png",
-        "href": "/projects/bluemapwrapper"
+        "href": "/projects/bluemapwrapper",
+        "sidebar":[
+            {
+                "title": "Check out the Project",
+                "href": "https://github.com/RyanStudioo/BlueMapWrapper"
+            }
+        ],
+        "features": [
+            {
+                "title": "Pythonic",
+                "description": "BlueMapWrapper is made in a way that makes it very intuitive for Python"
+            },
+            {
+                "title": "Object Oriented Design",
+                "description": "BlueMapWrapper was designed with OOP design principles in mind, making it scalable and easy to understand" 
+            }
+        ]
     },
     "ratmod": {
         "title": "Rat Mod",
         "description": "Rat mod is a Minecraft Fabric mod that adds rats, cheese, and more into your game!",
         "image": "/projects/images/rat.png",
-        "href": "/projects/ratmod"
+        "href": "/projects/ratmod",
+        "sidebar": [
+            {
+                "title": "Check out the Project",
+                "href": "https://github.com/RyanStudioo/Rat-Mod"
+            }
+        ],
+        "features": [
+            {
+                "title": "RATS!",
+                "description": "Rat Mod adds rats into your game, these rats are attracted to cheese, and will naturally wonder to cheese blocks. These critters spawn naturally in caves, and are peaceful!"
+            },
+            {
+                "title": "Cheese",
+                "description": "Rat Mod adds cheese into your game, which is crafted from milk, and can be eaten or fed to breed rats!"
+            }
+        ]
     }
 }

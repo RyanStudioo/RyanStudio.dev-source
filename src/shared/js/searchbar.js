@@ -44,6 +44,11 @@ export function debounce(fn, delay = 300) {
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 }
+
+function isApexDomain(url) {
+  return url === "ryanstudio.dev" || url === "www.ryanstudio.dev"
+}
+
 export function formatSearch(result) {
   let history = getSearchHistory()
   let className;
@@ -52,6 +57,13 @@ export function formatSearch(result) {
   } else {
     className = "history-icon"
   }
+  try {
+    const urlHref = new URL(result.href)
+    const internalLink = isApexDomain(urlHref)
+    if (!internalLink) {
+      className = className + " external-link"
+    }
+  } finally {
    return `
         <a href="${result.href}" id="${result.id}" class="${className}">
           <div>
@@ -59,6 +71,7 @@ export function formatSearch(result) {
             <p>${result.description}</p>
           </div>
         </a>`
+  }
 }
 
 export function getSearchHistory() {
@@ -70,8 +83,6 @@ export function getSearchHistory() {
 
 export function storeSearchHistoryEntry(entryID) {
   var searchHistory = getSearchHistory()
-  console.log(entryID)
-  console.log(searchHistory)
 
   if (!searchHistory) {
     localStorage.setItem("searchHistory", [entryID].toString())

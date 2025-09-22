@@ -26,5 +26,19 @@
     </script>
     <h1>Uh oh, looks like this page doesn't exist yet</h1>
     <img src="/src/images/icons/icon.png">
+    <span>Redirecting you back in <span id="countdown"></span>...</span>
+    <script>
+        const seconds = 5;
+        var counted = 0
+        const countdown = document.getElementById("countdown")
+        setInterval(() => {
+            countdown.innerText = `${seconds-counted}`
+            counted += 1
+            if (counted > seconds) {
+                window.location.href = "/"
+            }
+        }, 1000
+        )
+    </script>
 </body>
 </html>

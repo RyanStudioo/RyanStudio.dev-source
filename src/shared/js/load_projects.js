@@ -35,3 +35,46 @@ export function createArticleSliderElement(article) {
         return document.createElement('div');
     }
 }
+
+export async function createProjectsPage(projectKey) {
+    if (document.readyState === 'loading') {
+    await new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true }));
+  }
+        const response = await getArticle(projectKey)
+        const mainImage = response.image
+        document.getElementById('main-image').src = mainImage
+        document.getElementById('title').textContent = response.title
+        document.getElementById('description').innerHTML = response.description
+
+        const parent = document.getElementById("feature-box-container")
+
+        for (const article of response.features) {
+            const articleDiv = document.createElement("section")
+            articleDiv.classList.add("feature-box")
+            const featureTitle = document.createElement("h1")
+            featureTitle.textContent = article.title
+            const featureDescription = document.createElement("p")
+            featureDescription.textContent = article.description
+            articleDiv.appendChild(featureTitle)
+            articleDiv.appendChild(featureDescription)
+            parent.appendChild(articleDiv)
+        }
+
+        const sideBar = document.getElementById("side-bar")
+        for (const link of response.sidebar) {
+            const hrefElement = document.createElement("a")
+            hrefElement.textContent = link.title
+            hrefElement.href = link.href
+            sideBar.appendChild(hrefElement)
+        }
+
+        const width = parent.offsetWidth
+        parent.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                parent.scrollLeft += e.deltaY 
+            })
+        window.addEventListener("scroll", () => {
+        const offset = window.scrollY * 0.5; // slower than scroll
+        document.querySelector(".main-article-image").style.transform = `translateY(${offset}px)`;
+        });
+}
