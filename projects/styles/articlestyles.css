@@ -39,8 +39,8 @@
 
 .side-bar a:hover {
     color: rgb(42, 152, 189);
-    font-size: 1.6rem;
-    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    transform: scale(1.05);
+    transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .side-bar a:after {
