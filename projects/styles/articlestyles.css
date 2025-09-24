@@ -28,7 +28,7 @@
 }
 
 .side-bar a {
-    color: rgb(98, 200, 235);
+    color: var(--primary-link-colour);
     padding: 1rem;
     font-size: 1.5rem;
     text-decoration: none !important;
@@ -38,7 +38,7 @@
 }
 
 .side-bar a:hover {
-    color: rgb(42, 152, 189);
+    color: var(--hovered-link-colour);
     transform: scale(1.05);
     transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
 }

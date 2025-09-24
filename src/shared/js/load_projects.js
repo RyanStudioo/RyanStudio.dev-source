@@ -41,6 +41,7 @@ export async function createProjectsPage(projectKey) {
     await new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true }));
   }
         const response = await getArticle(projectKey)
+        console.log(response)
         const mainImage = response.image
         document.getElementById('main-image').src = mainImage
         document.getElementById('title').textContent = response.title

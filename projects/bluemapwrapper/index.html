@@ -30,10 +30,8 @@
         
         </div>
         <div class="article-section">
-            <aside class="side-bar">
+            <aside class="side-bar" id="side-bar">
                 <h1>Links</h1>
-                <a href="https://github.com/RyanStudioo/BlueMapWrapper">Check out the project!</a>
-                <a href="./docs">Read The Docs!</a>
             </aside>
             <article class="main-article">
                 <section class="overview-section">
@@ -43,14 +41,6 @@
                 <hr class="separator-bar">
                 <h1 class="article-title">Features</h1>
                 <section class="feature-box-container" id="feature-box-container">
-                    <section class="feature-box">
-                        <h1>Pythonic</h1>
-                        <p>BlueMapWrapper is made in a way that makes it very intuitive for Python</p>
-                    </section>
-                    <section class="feature-box">
-                        <h1>Object Oriented design</h1>
-                        <p>BlueMapWrapper was designed with OOP design principles in mind, making it scalable and easy to understand</p>
-                    </section>
                 </section>
                 <hr class="separator-bar">
                 <br style="margin-bottom: 5rem">
@@ -60,7 +50,7 @@
         import {loadUI} from '/src/shared/js/load_ui.js';
         import {createProjectsPage} from '/src/shared/js/load_projects.js';
         loadUI(false);
-        await createProjectsPage()
+        await createProjectsPage("bluemapwrapper")
    </script>
     </main>
 
