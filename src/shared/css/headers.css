@@ -29,7 +29,6 @@ nav.nav-bar {
 }
 
 .nav-bar a:hover {
-    color: rgb(47, 47, 248);
     text-decoration: none !important;
     transition: 1s;
 }
@@ -64,7 +63,7 @@ nav.nav-bar {
 
 .nav-links {
   display:flex;
-  gap: 20px;
+  gap: 2rem;
   align-items: center;
   height: 100%;
   margin: 0px;
