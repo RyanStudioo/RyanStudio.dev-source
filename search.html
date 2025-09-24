@@ -34,23 +34,38 @@
         const main = document.getElementById("main")
 
         if (params.has("q")) {
-            main.classList.add("list-results")
+            main.classList.add("list-results");
             const query = params.get("q");
             var results;
             if (query) {
-                results = await searchPage(query, 0.2)
+                results = await searchPage(query, 0.2);
+                const h1Element = document.createElement("h1");
+                h1Element.classList.add("results-title")
+                h1Element.textContent = `Showing ${results.resultsAmount} of ${results.results.length}...`;
+                main.appendChild(h1Element);
             } else {
-                results = itemsArray
+                results = {"results": itemsArray, "resultsAmount": 0};
             }
-            console.log(itemsArray)
-            const formattedResults = results.map(result => formatSearch(result)).join('')
-            main.innerHTML = formattedResults
-            const searchBarResults = document.getElementById("main")
+            console.log(results)
+            const formattedResults = results["results"].map(result => formatSearch(result)).join('');
+            main.innerHTML = main.innerHTML + formattedResults;
+            const searchBarResults = document.getElementById("main");
+            var placement = 0;
             for (const child of searchBarResults.children) {
                 child.addEventListener("click", ()=> {
-                    const id = child.id
-                    storeSearchHistoryEntry(id)
+                    const id = child.id;
+                    storeSearchHistoryEntry(id);
                 }, {once: true})
+                if (placement-1 === results.resultsAmount && results.resultsAmount !== 0) {
+                    const otherResults = document.createElement("h1");
+                    const splitter = document.createElement("hr")
+                    splitter.classList.add("splitter")
+                    otherResults.textContent = "Other Results...";
+                    otherResults.classList.add("results-title")
+                    child.before(otherResults);
+                    otherResults.before(splitter)
+                }
+                placement += 1
             }
             }
     </script>

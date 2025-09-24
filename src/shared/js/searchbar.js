@@ -142,6 +142,6 @@ export async function searchPage(query=null, threshold=false, fill=true) {
   final = final.concat(remaining)
   final = new Set(final)
   final = [...final]
-  return final
+  return {"resultsAmount": searchResults.length, "results": final}
 
 }
