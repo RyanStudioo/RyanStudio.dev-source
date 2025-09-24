@@ -67,7 +67,40 @@
                 }
                 placement += 1
             }
+        } else {
+            const h1Element = document.createElement("h1")
+            const inputContainer = document.createElement("div")
+            const searchIcon = document.createElement("span")
+            const inputElement = document.createElement("input")
+            h1Element.textContent = "RyanStudio.dev"
+            h1Element.classList.add("search-title")
+            main.appendChild(h1Element)
+            main.appendChild(inputElement)
+            main.classList.add("fill-container")
+            inputContainer.appendChild(searchIcon)
+            inputContainer.appendChild(inputElement)
+            inputElement.type = "text"
+            inputElement.classList.add("main-search-bar")
+            inputContainer.classList.add("search-container")
+            searchIcon.classList.add("search-icon-search")
+            inputElement.placeholder = "Search RyanStudio.dev"
+            main.appendChild(inputContainer)
+
+            function locationResult() {
+                const inputValue = inputElement.value.trim()
+                window.location.href = `${window.location.href}?q=${inputValue}`
             }
+
+            searchIcon.addEventListener("click", () => {
+                locationResult()
+            })
+            inputContainer.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    locationResult()
+                    event.preventDefault()
+                }
+            })
+        }
     </script>
     
 </body>
