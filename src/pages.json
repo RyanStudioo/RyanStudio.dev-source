@@ -36,7 +36,7 @@
                 "id": "projects-ratmod",
                 "title": "Rat Mod",
                 "description": "Project Page for Rat Mod",
-                "tags": ["rat", "cheese", "fabric", "mod", "minecraft mod"],
+                "tags": ["rat", "cheese", "fabric", "mod", "minecraft mod", "ratmod"],
                 "href": "/projects/ratmod"
             }
         ],
@@ -63,21 +63,21 @@
                 "id": "link-discord",
                 "title": "Discord Server",
                 "description": "Join our discord!",
-                "tags": ["discord", "help", "forum"],
+                "tags": ["discord", "help", "forum", "socials"],
                 "href": "https://discord.ryanstudio.dev"
             },
             {
                 "id": "link-youtube",
                 "title": "Youtube",
                 "description": "Watch me on Youtube!",
-                "tags": ["youtube", "videos", "content"],
+                "tags": ["youtube", "videos", "content", "socials"],
                 "href": "https://youtube.ryanstudio.dev"
             },
             {
                 "id": "link-github",
                 "title": "Github",
                 "description": "Look at my Projects",
-                "tags": ["github", "code", "projects"],
+                "tags": ["github", "code", "projects", "socials"],
                 "href": "https://github.ryanstudio.dev"
             },
             {

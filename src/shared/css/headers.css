@@ -352,14 +352,12 @@ nav.nav-bar {
 .search-icon:before {
   font: var(--fa-font-solid);
   content: '\f002';
-  font-size: 0.8rem;
   margin: 0px 0.5rem;
 }
 
 .history-icon:before {
   font: var(--fa-font-solid);
   content: '\f1da';
-  font-size: 0.8rem;
   margin: 0px 0.5rem;
 }
 

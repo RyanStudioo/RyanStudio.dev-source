@@ -39,6 +39,14 @@
       await initSearch()
 
       const searchBar = document.getElementById("search-bar")
+
+      searchBar.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          console.log("enter pressed")
+          window.location.href = `/search.html?q=${searchBar.value.trim()}`
+        }
+      })
+
       const searchResultsList = document.getElementById("search-results")
       const inputHandling = debounce(async () => {
         const query = searchBar.value.trim()

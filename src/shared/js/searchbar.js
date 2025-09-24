@@ -26,6 +26,7 @@ export async function initSearch() {
     keys: ["title", "description", "tags"],
     threshold: 0.4,
   });
+  return itemsArray
 }
 
 export function searchResults(searchQuery) {
@@ -82,6 +83,7 @@ export function getSearchHistory() {
 }
 
 export function storeSearchHistoryEntry(entryID) {
+  if (!entryID) { return}
   var searchHistory = getSearchHistory()
 
   if (!searchHistory) {
@@ -94,15 +96,15 @@ export function storeSearchHistoryEntry(entryID) {
     searchHistory = new Set(searchHistory)
     searchHistory = [...searchHistory]
   }
-  if (searchHistory.length > 3) {
+  if (searchHistory.length > 5) {
     searchHistory.pop()
   }
   localStorage.setItem("searchHistory", searchHistory.toString())
   return searchHistory
 }
 
-export async function addListeners() {
-  const searchBarResults = document.getElementById("search-results")
+export async function addListeners(id="search-results") {
+  const searchBarResults = document.getElementById(id)
   for (const child of searchBarResults.children) {
     child.addEventListener("click", ()=> {
       const id = child.id
@@ -114,4 +116,32 @@ export async function addListeners() {
 
 function getSearchByID(id) {
   return itemsArray.find(item => item.id === id)
+}
+
+export async function searchPage(query=null, threshold=false, fill=true) {
+  var final;
+  var searchHistoryResults = [];
+  var remaining = []
+  var searchResults = []
+
+  const searchHistory = getSearchHistory()
+  searchHistoryResults = searchHistory.map(result => getSearchByID(result))
+  final = searchHistoryResults
+  if (threshold && query) {
+    const customfuse = new Fuse(itemsArray, {
+    keys: ["title", "description", "tags"],
+    threshold: threshold
+  });
+    searchResults = customfuse.search(query).map(item=>item.item)
+    console.log(searchResults)
+  }
+  if (fill) {
+    remaining = remaining.concat(itemsArray)
+  }
+  final = searchResults.concat(searchHistoryResults)
+  final = final.concat(remaining)
+  final = new Set(final)
+  final = [...final]
+  return final
+
 }

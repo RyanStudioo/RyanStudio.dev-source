@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/src/shared/js/baseurl.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - RyanStudio.dev</title>
+
+
+    <title>RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/src/pages/css/search.css">
+</head>
+<body>
+    <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <script src="/src/shared/js/searchbar.js" type="module"></script>
+    <div id="nav-bar"></div>
+
+    <main id="main">
+
+    </main>
+
+    <script type="module">
+        import {loadUI} from './src/shared/js/load_ui.js';
+        import {initSearch, formatSearch, searchPage, addListeners, storeSearchHistoryEntry} from "/src/shared/js/searchbar.js"
+        loadUI(false);
+        const itemsArray = await initSearch()
+        const queryString = window.location.search;
+        const params = new URLSearchParams(queryString)
+        const main = document.getElementById("main")
+
+        if (params.has("q")) {
+            main.classList.add("list-results")
+            const query = params.get("q");
+            var results;
+            if (query) {
+                results = await searchPage(query, 0.2)
+            } else {
+                results = itemsArray
+            }
+            console.log(itemsArray)
+            const formattedResults = results.map(result => formatSearch(result)).join('')
+            main.innerHTML = formattedResults
+            const searchBarResults = document.getElementById("main")
+            for (const child of searchBarResults.children) {
+                child.addEventListener("click", ()=> {
+                    const id = child.id
+                    storeSearchHistoryEntry(id)
+                }, {once: true})
+            }
+            }
+    </script>
+    
+</body>
+</html>
