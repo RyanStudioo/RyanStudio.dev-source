@@ -4,10 +4,8 @@
     <script src="/src/shared/js/baseurl.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results - RyanStudio.dev</title>
+    <title id="title">Search -  RyanStudio.dev</title>
 
-
-    <title>RyanStudio.dev</title>
     <link rel="icon" href="/src/images/icons/icon.ico">
 
 
@@ -38,10 +36,11 @@
             const query = params.get("q");
             var results;
             if (query) {
+                const title = document.title = `${query} - RyanStudio.dev`
                 results = await searchPage(query, 0.2);
                 const h1Element = document.createElement("h1");
                 h1Element.classList.add("results-title")
-                h1Element.textContent = `Showing ${results.resultsAmount} of ${results.results.length}...`;
+                h1Element.textContent = `Showing ${results.resultsAmount} of ${results.results.length} Results...`;
                 main.appendChild(h1Element);
             } else {
                 results = {"results": itemsArray, "resultsAmount": 0};
@@ -56,7 +55,7 @@
                     const id = child.id;
                     storeSearchHistoryEntry(id);
                 }, {once: true})
-                if (placement-1 === results.resultsAmount && results.resultsAmount !== 0) {
+                if (placement-1 === results.resultsAmount) {
                     const otherResults = document.createElement("h1");
                     const splitter = document.createElement("hr")
                     splitter.classList.add("splitter")

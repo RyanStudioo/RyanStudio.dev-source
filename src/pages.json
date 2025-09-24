@@ -14,6 +14,13 @@
                 "description": "Navigate to different Projects",
                 "tags": ["projects"],
                 "href": "/projects"
+            },
+            {
+                "id": "searchpage",
+                "title": "Search Page",
+                "description": "Search for different pages here",
+                "tags": ["Search", "help", "page", "pages"],
+                "href": "/search.html"
             }
         ],
     "projectpages":
