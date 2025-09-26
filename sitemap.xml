@@ -5,6 +5,7 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- Main Pages -->
 
 <url>
   <loc>https://www.ryanstudio.dev/</loc>
@@ -13,14 +14,22 @@
   <loc>https://www.ryanstudio.dev/projects/</loc>
 </url>
 <url>
+  <loc>https://www.ryanstudio.dev/search</loc>
+</url>
+
+<!-- Project Pages -->
+
+<url>
   <loc>https://www.ryanstudio.dev/projects/oracle/</loc>
 </url>
 <url>
-  <loc>https://www.ryanstudio.dev/projects/bluemapwrapper</loc>
+  <loc>https://www.ryanstudio.dev/projects/bluemapwrapper/</loc>
 </url>
 <url>
-  <loc>https://www.ryanstudio.dev/projects/ratmod</loc>
+  <loc>https://www.ryanstudio.dev/projects/ratmod/</loc>
 </url>
+
+<!-- Sub Domains -->
 
 <url>
   <loc>https://youtube.ryanstudio.dev/</loc>
