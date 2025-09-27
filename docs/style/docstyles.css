@@ -29,5 +29,7 @@
 }
 
 .aside-container {
-    gap: 5rem
+    gap: 5rem;
+    display: flex;
+    flex-direction: column;
 }
