@@ -78,4 +78,9 @@ export async function createProjectsPage(projectKey) {
         const offset = window.scrollY * 0.5; // slower than scroll
         document.querySelector(".main-article-image").style.transform = `translateY(${offset}px)`;
         });
+        document.title = `${response.title} - RyanStudio.dev`
+        const meta = document.createElement("meta");
+        meta.name = "description";
+        meta.content = response.description;
+        document.head.appendChild(meta)
 }
