@@ -23,23 +23,27 @@
     <script src="/src/shared/js/load_ui.js" type="module"></script>
     <div id="nav-bar"></div>
     <main id="main">
-        <aside id="aside" class="aside">
-            <ul class="aside-container">
-                <li>
-                    <h2 class="aside-title">category</h2>
-                </li>
-                <li class="aside-category">
-                    <a class="category-title">test1</a>
-                    <ul class="page-container">
-                        <li><a class="page">page1</a></li>
-                        <li><a class="page">page2</a></li>
-                    </ul>
-                </li>
-                <li class="aside-category">
-                    <a class="category-title"> test2</a>
-                </li>
-            </ul>
-        </aside>
+        <div id="aside-bar">
+            <aside id="aside" class="aside">
+                <ul class="aside-container">
+                    <li>
+                        <h2 class="aside-title">category</h2>
+                    </li>
+                    <li class="aside-category">
+                        <a class="category-title">test1</a>
+                        <ul class="page-container">
+                            <li><a class="page">page1</a></li>
+                            <li><a class="page">page2</a></li>
+                        </ul>
+                    </li>
+                    <li class="aside-category">
+                        <a class="category-title"> test2</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        
+        
     </main>
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';

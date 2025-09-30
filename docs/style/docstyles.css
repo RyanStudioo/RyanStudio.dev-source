@@ -1,10 +1,14 @@
 #main {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     background-color: var(--darker-background-colour);
-    transition: 0.3s
+}
+
+#aside-bar {
+    height: 100vh;
+}
+
+#aside-bar.aside-toggled {
+    transform: translateX(-100%);
 }
 
 .nav-bar {
@@ -24,8 +28,44 @@
     font-size: 1.5rem;
     width: 20rem;
     background-color: var(--diminished-background-colour);
-    flex-grow: 1;
+    height: inherit;
+    transform: translateX(0);
     transition: 0.3s
+}
+
+.aside-toggled {
+    transform: translateX(-105%);
+    padding: 0px;
+    opacity: 0;
+    transition:  0.3s;
+}
+
+.aside-carrot-container {
+    display: flex
+}
+
+.aside-carrot {
+    position: sticky;
+    padding: 1rem;
+    padding-right: 5rem;
+    max-height: 0px;
+    max-width: 0px;
+}
+
+.aside-carrot::after {
+    font: var(--fa-font-solid);
+    content: '>';
+    transform: translateX(-105%);
+    font-size: 1.5rem;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-carrot.aside-toggled {
+    opacity: 1;
+    transform: translateX(-325%);
+    transition: 0.2s;
 }
 
 .aside-container {
