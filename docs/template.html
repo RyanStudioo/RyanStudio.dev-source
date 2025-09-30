@@ -25,14 +25,34 @@
     <main id="main">
         <aside id="aside" class="aside">
             <ul class="aside-container">
-                <a>test</a>
-                <a>test2</a>
+                <li>
+                    <h2 class="aside-title">category</h2>
+                </li>
+                <li class="aside-category">
+                    <a class="category-title">test1</a>
+                    <ul class="page-container">
+                        <li><a class="page">page1</a></li>
+                        <li><a class="page">page2</a></li>
+                    </ul>
+                </li>
+                <li class="aside-category">
+                    <a class="category-title"> test2</a>
+                </li>
             </ul>
         </aside>
     </main>
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';
         loadUI(false);
+        const categories = document.querySelectorAll(".aside-category")
+        categories.forEach(element => {
+            element.addEventListener("click", (event => {
+                element.classList.toggle("open")
+            }))
+        })
+        document.querySelectorAll(".page-container .page").forEach((element, idx) => {
+            element.style.setProperty('--index', idx)
+        })
    </script>
 </body>
 </html>

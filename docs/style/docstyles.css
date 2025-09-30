@@ -1,4 +1,6 @@
 #main {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: var(--darker-background-colour);
@@ -11,25 +13,106 @@
 }
 
 .aside {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
     padding-top: 5rem;
-    padding-right: 15rem;
     padding-bottom: auto;
-    padding-left: 3rem;
-    gap: 2rem;
+    padding-left: 5rem;
     font-size: 1.5rem;
+    width: 20rem;
     background-color: var(--diminished-background-colour);
-    height: 100%;
+    flex-grow: 1;
     transition: 0.3s
 }
 
 .aside-container {
-    gap: 5rem;
+    gap: 2rem;
     display: flex;
     flex-direction: column;
+    padding: 0rem;
+    width: fit-content;
+    list-style: none;
+    width: 100%;
 }
+
+.aside-container > * {
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: left;
+}
+
+.aside-title {
+    margin: 0;
+    padding: 0;
+}
+
+.aside-category {
+    justify-content: left;
+    width: 100%;
+    user-select: none;
+}
+
+.aside-category .category-title::after {
+    font: var(--fa-font-solid);
+    font-size: 1rem;
+    content: '\f107';
+    display: inline-block;
+    padding: 1rem;
+    padding-left: 1.2rem;
+    transform: rotate(-90deg);
+    transition: 0.1s
+}
+
+.aside-category.open .category-title::after {
+    transform: rotate(0deg);
+    transition: 0.1s;
+}
+
+.aside-category .name {
+
+}
+
+.page-container {
+    list-style: none;
+}
+
+.aside-category .page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    padding-left: 2.5rem;
+    border-left: 2px solid var(--translucent-text-colour);
+    overflow: hidden;
+    max-height: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.3s ease, max-height 0.2s ease, transform 0.2s ease, border-left 0.2s ease;
+}
+
+.aside-category.open .page-container {
+    opacity: 1;
+    max-height: 50rem;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, max-height 0.2s ease, transform 0.2s ease border-left 0.2s ease;
+}
+
+.page {
+    --index: 0;
+}
+
+.aside-category .page-container .page {
+    font-size: 1.2rem;
+    transform: translateY(-6px);
+    transition: opacity 0.3s ease, max-height 0.2s ease, transform 0.15s ease border-left 0.2s ease;
+}
+
+.aside-category.open .page-container .page {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, max-height 0.2s ease, transform 0.15s ease border-left 0.2s ease;
+}
+
