@@ -44,10 +44,11 @@
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';
         loadUI(false);
-        const categories = document.querySelectorAll(".aside-category")
+        const categories = document.querySelectorAll(".category-title")
         categories.forEach(element => {
             element.addEventListener("click", (event => {
-                element.classList.toggle("open")
+                event.preventDefault()
+                element.parentElement.classList.toggle("open")
             }))
         })
         document.querySelectorAll(".page-container .page").forEach((element, idx) => {

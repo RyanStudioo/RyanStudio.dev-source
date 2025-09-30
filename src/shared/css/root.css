@@ -2,6 +2,7 @@
     --primary-background-colour:#292b2f;
     --primary-text-colour: #f0f0f0;
     --translucent-text-colour: rgba(255, 255, 255, 0.5);
+    --hovered-text-colour: #bbb8b8;
 
     --diminished-background-colour: #393b40;
     --darker-background-colour: #222425;
@@ -18,6 +19,7 @@ html[data-theme="light"] {
     --primary-background-colour:white;
     --primary-text-colour: black;
     --translucent-text-colour: rgba(0, 0, 0, 0.5);
+    --hovered-text-colour: rgb(26, 26, 26);
 
     --diminished-background-colour: #e5e5e6;
      --darker-background-colour: #cacaca;
