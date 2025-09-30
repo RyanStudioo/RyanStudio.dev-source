@@ -58,6 +58,7 @@
 
 .category-title {
     padding: 1rem;
+    font-weight: bold
 }
 
 .aside-category .category-title::after {
@@ -103,13 +104,15 @@
 
 .category-title:hover, .page:hover {
     color: var(--hovered-text-colour);
-    transition: 0.2s
+    transition: 0.2s ease
 }
 
 .page {
     --index: 0;
     color: var(--primary-text-colour);
     padding: 0.5rem;
+    font-weight: 550;
+    transition: 0.2s ease
 }
 
 .aside-category .page-container .page {

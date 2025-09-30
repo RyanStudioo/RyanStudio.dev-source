@@ -19,7 +19,7 @@ html[data-theme="light"] {
     --primary-background-colour:white;
     --primary-text-colour: black;
     --translucent-text-colour: rgba(0, 0, 0, 0.5);
-    --hovered-text-colour: rgb(26, 26, 26);
+    --hovered-text-colour: rgb(82, 82, 82);
 
     --diminished-background-colour: #e5e5e6;
      --darker-background-colour: #cacaca;
