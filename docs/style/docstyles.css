@@ -76,6 +76,7 @@
     width: fit-content;
     list-style: none;
     width: 100%;
+    border-left: 2px solid var(--translucent-text-colour);
 }
 
 .aside-container > * {
@@ -88,6 +89,7 @@
 .aside-title {
     margin: 0;
     padding: 0;
+    text-align: left;
 }
 
 .aside-category {
@@ -96,8 +98,9 @@
     user-select: none;
 }
 
+
 .category-title {
-    padding: 1rem;
+    padding-left: 2rem;
     font-weight: bold
 }
 
@@ -120,6 +123,8 @@
 
 .page-container {
     list-style: none;
+    text-align: left;
+    margin-left: 2rem;
 }
 
 .aside-category .page-container {
@@ -144,7 +149,7 @@
 
 .category-title:hover, .page:hover {
     color: var(--hovered-text-colour);
-    transition: 0.2s ease
+    transition: 0.2s ease;
 }
 
 .page {
@@ -167,3 +172,6 @@
     transition: opacity 0.3s ease, max-height 0.2s ease, transform 0.15s ease border-left 0.2s ease;
 }
 
+.category-title:hover {
+    transform: scale(1.05);
+}
