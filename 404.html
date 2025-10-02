@@ -24,9 +24,16 @@
         import {loadUI} from './src/shared/js/load_ui.js';
         loadUI(false);
     </script>
-    <h1>Uh oh, looks like this page doesn't exist yet</h1>
-    <img src="/src/images/icons/icon.png">
-    <span>Redirecting you back in <span id="countdown"></span>...</span>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1>Uh oh, looks like this page doesn't exist yet</h1>
+        <img src="/src/images/icons/icon.png" style="width: 20rem">
+        <div style="margin: 5rem;">
+            <span>Redirecting you back in <span id="countdown"></span>...</span>
+        </div>
+        <h2><a href="/" style="color: var(--primary-link-colour); text-decoration: none">Return to homepage</a></h2>
+    </div>
+    
+    
     <script>
         const seconds = 5;
         var counted = 0

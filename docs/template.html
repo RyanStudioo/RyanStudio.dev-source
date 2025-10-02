@@ -21,23 +21,13 @@
 </head>
 <body>
     <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <script src="/src/shared/js/load_docs.js" type="module"></script>
     <div id="nav-bar"></div>
     <main id="main">
         <div id="aside-bar">
             <aside id="aside" class="aside">
-                <h2 class="aside-title">category</h2>
-                <ul class="aside-container">
-
-                    <li class="aside-category">
-                        <a class="category-title">test1</a>
-                        <ul class="page-container">
-                            <li><a class="page">page1</a></li>
-                            <li><a class="page">page2</a></li>
-                        </ul>
-                    </li>
-                    <li class="aside-category">
-                        <a class="category-title"> test2</a>
-                    </li>
+                <h2 class="aside-title" id="aside-title"></h2>
+                <ul class="aside-container" id="aside-container">
                 </ul>
             </aside>
         </div>
@@ -46,7 +36,9 @@
     </main>
     <script type="module">
         import {loadUI} from '/src/shared/js/load_ui.js';
+        import {loadAside} from '/src/shared/js/load_docs.js'
         loadUI(false);
+        await loadAside("oracle")
         const categories = document.querySelectorAll(".category-title")
         categories.forEach(element => {
             element.addEventListener("click", (event => {
