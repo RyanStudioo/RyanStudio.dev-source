@@ -38,4 +38,11 @@ export async function loadAside(projectID) {
         };
 
     }
+    const categories = document.querySelectorAll(".aside-category")
+    categories.forEach(element => {
+        element.addEventListener("click", (event => {
+            event.preventDefault()
+            element.parentElement.classList.toggle("open")
+        }))
+    })
     }

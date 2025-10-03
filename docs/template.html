@@ -39,16 +39,6 @@
         import {loadAside} from '/src/shared/js/load_docs.js'
         loadUI(false);
         await loadAside("oracle")
-        const categories = document.querySelectorAll(".category-title")
-        categories.forEach(element => {
-            element.addEventListener("click", (event => {
-                event.preventDefault()
-                element.parentElement.classList.toggle("open")
-            }))
-        })
-        document.querySelectorAll(".page-container .page").forEach((element, idx) => {
-            element.style.setProperty('--index', idx)
-        })
    </script>
 </body>
 </html>
