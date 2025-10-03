@@ -38,7 +38,7 @@ export async function loadAside(projectID) {
         };
 
     }
-    const categories = document.querySelectorAll(".aside-category")
+    const categories = document.querySelectorAll(".aside-category .category-title")
     categories.forEach(element => {
         element.addEventListener("click", (event => {
             event.preventDefault()
