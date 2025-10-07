@@ -1,6 +1,6 @@
 
 export async function loadAside(projectID) {
-    const projects = await fetch("/docs/docpages.json");
+    const projects = await fetch("/docs/aside-bars.json");
     const data = await projects.json();
     const project = data[projectID];
     const name = project.name;
