@@ -1,0 +1,18 @@
+{
+    "name": "Oracle AI Docs",
+    "aside": [
+        {
+            "name": "Overview",
+            "href": "/docs/oracle/overview.html"
+        },
+        {
+            "name": "Features",
+            "children": [
+                {
+                    "name": "AI",
+                    "href": "/docs/oracle/features/ai.html"
+                }
+            ]
+        }
+    ]
+}

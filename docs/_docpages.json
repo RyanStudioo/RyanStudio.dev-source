@@ -1,0 +1,8 @@
+{
+    "oracle": {
+        "path": "/docs/_pages/oracle.json"
+    },
+    "parsegument": {
+        "path": "/docs/_pages/parsegument.json"
+    }
+}

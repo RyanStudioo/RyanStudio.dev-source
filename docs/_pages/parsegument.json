@@ -1,0 +1,18 @@
+{
+    "name": "Parsegument Docs",
+    "aside": [
+        {
+            "name": "Overview",
+            "href": "/docs/parsegument/overview.html"
+        },
+        {
+            "name": "Quick Start",
+            "children": [
+                {
+                    "name": "Argument Parsing",
+                    "href": "/docs/parsegument/features/argument_parsing.html"
+                }
+            ]
+        }
+    ]
+}

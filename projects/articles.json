@@ -76,5 +76,32 @@
                 "description": "Rat Mod adds cheese into your game, which is crafted from milk, and can be eaten or fed to breed rats!"
             }
         ]
+    },
+    "parsegument": {
+        "title": "Parsegument",
+        "description": "Parsegument is a Python library that makes it easy to parse strings and execute functions from text inputs!",
+        "image": "/projects/images/parsegument.png",
+        "href": "/projects/parsegument",
+        "sidebar": [
+            {
+                "title": "Check out the Project",
+                "href": "https://github.com/RyanStudioo/Parsegument"
+            },
+            {
+                "title": "Read the Docs",
+                "href": "/docs/Parsegument"
+            }
+        ],
+        "features": [
+            {
+                "title": "Argument Parsing",
+                "description": "Parse strings into different arguments"
+            },
+            {
+                "title": "Link commands to functions",
+                "description": "You can automatically execute functions from text inputs, Parsegument will automatically parse the arguments and pass their proper types to the function"
+            }
+        ]
+
     }
 }
