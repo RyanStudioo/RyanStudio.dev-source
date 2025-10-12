@@ -203,6 +203,8 @@
     font-weight: bold;
     font-size: 1.3rem;
     cursor: pointer;
+    color: var(--primary-text-colour);
+    text-decoration: none !important;
 }
 
 .main-article h1,

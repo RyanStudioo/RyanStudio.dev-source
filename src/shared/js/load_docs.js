@@ -47,3 +47,42 @@ export async function loadAside(projectID) {
         }))
     })
     }
+
+async function getNextPagePointer(projectID) {
+    const currentPage = window.location.pathname
+    var pages = await fetch("/docs/_docpages.json");
+    pages = await pages.json();
+    var project_page = await fetch(pages[projectID].path);
+    project_page = await project_page.json();
+    const aside = project_page.aside;
+    var flatPages = [];
+    for (const project of aside) {
+        if ("children" in project) {
+            for (const page of project.children) {
+                flatPages.push(page.href)
+            }
+        } else {
+            flatPages.push(project.href)
+        }
+    };
+    var page = flatPages.indexOf(currentPage);
+    if (page < flatPages.length - 1) {
+        const nextPage = flatPages[page + 1];
+        return nextPage
+    } else {
+        return null
+    }
+}
+
+export async function loadNextPagePointer(projectID) {
+    const nextPage = await getNextPagePointer(projectID);
+    if (!nextPage) { return}
+    const section = document.createElement("section");
+    const nextPagePointer = document.createElement("a");
+    section.appendChild(nextPagePointer);
+    nextPagePointer.classList.add("next-page");
+    nextPagePointer.href = nextPage;
+    nextPagePointer.textContent = "Next Page >";
+    document.querySelector(".main-article").appendChild(nextPagePointer);
+    document.getElementById("main").appendChild(section);
+}
