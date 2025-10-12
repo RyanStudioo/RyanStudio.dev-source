@@ -83,6 +83,5 @@ export async function loadNextPagePointer(projectID) {
     nextPagePointer.classList.add("next-page");
     nextPagePointer.href = nextPage;
     nextPagePointer.textContent = "Next Page >";
-    document.querySelector(".main-article").appendChild(nextPagePointer);
-    document.getElementById("main").appendChild(section);
+    document.querySelector(".main-article").appendChild(section);
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/src/shared/js/baseurl.js"></script>
+    <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
+
+
+    <meta name="google-adsense-account" content="ca-pub-8030717046519441">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <title>Documentation - RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/docs/style/docstyles.css">
+
+</head>
+<body>
+    <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <script src="/src/shared/js/load_docs.js" type="module"></script>
+    <div id="nav-bar"></div>
+    <main id="main">
+        <aside id="aside" class="aside">
+            <h2 class="aside-title" id="aside-title"></h2>
+            <ul class="aside-container" id="aside-container">
+            </ul>
+        </aside>
+        <article class="main-article">
+            <h1>Concepts</h1>
+            <section>
+                <h2>Argument Parsing</h2>
+                <p>Parsegument uses the shlex module to parse arguments, where
+                    each argument is separated by spaces, and can be grouped using quotes<br><br>
+                    For example, the command:<br>
+<pre class="code-block"><code>git commit -m "this is a commit message"</code></pre><br>
+                    would be converted into the following list:<br>
+<pre class="code-block"><code>["git", "commit", "-m", "this is a commit message"]</code></pre><br>
+                    to use things like lists or dictionaries as arguments, you can use double quotes around them<br>
+<pre class="code-block"><code>command --list "[1, 2, 3]" --dict '{"key": "value"}'</code></pre><br>
+                    read more about shlex at: <a href="https://docs.python.org/3/library/shlex.html" class="para-link">https://docs.python.org/3/library/shlex.html</a>
+                </p>
+            </section>
+            <section>
+                <h2>CommandGroups</h2>
+                <p>
+                    <code>CommandGroups</code> are how Parsegument structure commands! <code>CommandGroups</code> can contain <code>Commands</code>, or even other <code>CommandGroups</code><br><br>
+                    <img src="docs/parsegument/resources/CommandGroup.png" alt="diagram of CommandGroup structure">
+
+                </p>
+            </section>
+            <section>
+                <h2>Commands</h2>
+                <p>
+                    <code>Commands</code> are each linked to a specific function, and contains arguments<br>
+                    For example, the command 
+                    <pre class="code-block"><code>git commit --m="this is a commit message"</code></pre> would be a command called "commit"
+                </p>
+            </section>
+            <section>
+                <h2>Arguments</h2>
+                <p>
+                    In Parsegument, there are 3 types of arguments:<ul>
+                        <li>Arguments</li>
+                        <li>Flags</li>
+                        <li>Operands</li>
+                    </ul><br>
+                    <code>Arguments</code> are compulsory inputs within a function <br>
+                    <code>Flags</code> are optional inputs to enable certain features, which are defined by a  "-" before the argument<br>
+                    <code>Operands</code> are optional keyword arguments that are defined by a "--" before the argument
+                </p>
+            </section>
+            <section>
+                <h2>Examples</h2>
+                <p>
+                    Here is how a Python function would be defined in Parsegument:<br>
+<pre class="code-block language-python">
+<code>def my_function(arg1: int, arg2: str, flag: bool=False, operand: str="default"):
+    pass
+</code></pre><br>
+            In the above function, <code>arg1</code> and <code>arg2</code> would be categorised as <code>Arguments</code>, meaning that they are compulsory<br>
+            <code>flag</code> would be categorised as a <code>Flag</code>, meaning that it is optional, and can be enabled by using <code>-flag</code><br>
+            <code>operand</code> would be categorised as an <code>Operand</code>, meaning that it is optional, and can be set by using <code>--operand=value</code><br><br>
+            Here are some example commands that would execute the above function:<br>
+<pre class="code-block"><code>my_function 123 "hello world"</code></pre>
+This command only fills in the compulsory arguments, and uses the default values for the optional arguments<br><br>
+<pre class="code-block"><code>my_function 123 "hello world" -flag</code></pre>
+This command fills in the compulsory arguments, and enables the flag<br><br>
+<pre class="code-block"><code>my_function 123 "hello world" --operand="custom value"</code></pre>
+This command fills in the compulsory arguments, and sets a custom value for the operand<br><br>
+<pre class="code-block"><code>my_function 123 "hello world" -flag --operand="custom value"</code></pre>
+This command fills in the compulsory arguments, enables the flag, and sets a custom value for the operand
+                </p>
+            </section>
+        </article>
+        
+        
+    </main>
+    <script type="module">
+        import {loadUI} from '/src/shared/js/load_ui.js';
+        import {loadAside, loadNextPagePointer} from '/src/shared/js/load_docs.js'
+        loadUI(false);
+        await loadAside("parsegument")
+        await loadNextPagePointer("parsegument")
+   </script>
+</body>
+</html>

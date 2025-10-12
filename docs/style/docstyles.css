@@ -1,6 +1,6 @@
 #main {
     width: 100%;
-    background-color: var(--darker-background-colour);
+    background-color: var(--primary-background-colour);
     display: flex;
     align-items: flex-start;
     transition: 0.3s;
@@ -16,6 +16,7 @@
 
 .nav-bar {
     background-color: var(--primary-background-colour);
+    box-shadow: 0.01rem 0.01rem 0.4rem 0.1rem var(--shadow);
     transition: 0.3s
 }
 
@@ -249,10 +250,31 @@
 }
 
 .code-block {
-    background-color: var(--darker-background-colour);
+    background-color: var(--diminished-background-colour);
     border: 1px solid var(--translucent-text-colour);
     width: 95%;
     border-radius: 0.5rem;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    background-color: inherit !important;
+}
+
+.para-link {
+    color: var(--primary-link-colour);
+    text-decoration: underline !important;
+}
+
+.main-article img {
+    max-width: 100%;
+}
+
+.main-article code {
+    font-size: 1rem;
+    background-color: var(--diminished-background-colour);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
 }

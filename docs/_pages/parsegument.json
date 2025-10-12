@@ -6,13 +6,12 @@
             "href": "/docs/parsegument/"
         },
         {
+            "name": "Concepts",
+            "href": "/docs/parsegument/concepts.html"
+        },
+        {
             "name": "Quick Start",
-            "children": [
-                {
-                    "name": "Argument Parsing",
-                    "href": "/docs/parsegument/features/argument_parsing.html"
-                }
-            ]
+            "href": "/docs/parsegument/quickstart.html"
         }
     ]
 }
