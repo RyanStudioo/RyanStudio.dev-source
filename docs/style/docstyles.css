@@ -196,6 +196,15 @@
     max-width: 45vw;
 }
 
+.next-page {
+    content: "Next Page >";
+    display: inline-block;
+    margin-left: 85%;
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
 .main-article h1,
 .main-article h2,
 .main-article h3,
@@ -235,4 +244,13 @@
     padding: 1rem 0rem;
     margin: 2rem 0 1rem 0;
     line-height: 1.6;
+}
+
+.code-block {
+    background-color: var(--darker-background-colour);
+    border: 1px solid var(--translucent-text-colour);
+    width: 95%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
 }
