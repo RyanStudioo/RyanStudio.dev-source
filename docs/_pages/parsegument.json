@@ -12,6 +12,10 @@
         {
             "name": "Quick Start",
             "href": "/docs/parsegument/quickstart.html"
+        },
+        {
+            "name": "Dev Logs",
+            "href": "/docs/parsegument/devlog.html"
         }
     ]
 }
