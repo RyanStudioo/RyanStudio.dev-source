@@ -30,8 +30,52 @@
             </ul>
         </aside>
         <article class="main-article">
+            <h1>Quick Start</h1>
             <section>
-                <h2></h2>
+                <h2>Setting up a Parsegumenter</h2>
+                <p>
+                    It is recommanded to use a <code>Parsegumenter</code> Object as your main manager.<br>
+                    You can create one with the following:<br>
+<pre class="code-block"><code>import parsegument as pg
+parser = pg.Parsegumenter() # Create Parsegumenter
+</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Creating a CommandGroup</h2>
+                <p>
+                    CommandGroups are how Parsegument groups commands! You can create a CommandGroup with the following:<br>
+<pre class="code-block"><code>group1 = pg.CommandGroup("group1") # Define a Group
+parser.add_child(group1) # Add the Group to the main Parsegumenter
+</code></pre>
+                    You can also create sub-groups by adding a CommandGroup to another CommandGroup<br>
+                </p>
+            </section>
+            <section>
+                <h2>Defining your Command</h2>
+                <p>
+                    Commands are each linked to a function. You can either define a command's arguments by using the <code>@CommandGroup.command</code> decorator, or defining it yourself with the <code>Command.add_node()</code> method<br><br>
+                    We'll be using the decorator for this example!<br>
+<pre class="code-block"><code>@group1.command
+def foo(bar:str):
+    print(bar)
+</code></pre>
+                </p>
+            </section>
+            <section>
+                <h2>Executing the Command</h2>
+                <p>
+                    And... just like that, you're done! you can execute your comand with the following:<br>
+<pre class="code-block"><code>parser.execute("group1 foo bar_string")</code></pre>
+                    This will print out <code>bar_string</code> to the console<br>
+                    You can add as many Commands and CommandGroups to the CommandGroup or Parsegumenter as you want!
+                </p>
+            </section>
+            <section>
+                <a 
+                href="https://github.com/RyanStudioo/Parsegument/blob/master/examples/quickstart.py"
+                class="para-link"
+                ><h3>View QuickStart on Github</h3></a>
             </section>
         </article>
         
