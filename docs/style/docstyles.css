@@ -31,6 +31,7 @@
     background-color: var(--diminished-background-colour);
     height: 100vh;
     transform: translateX(0);
+    transition: 0.3s
 }
 
 .aside-toggled {
@@ -84,7 +85,6 @@
     display: block;
     text-align: left;
 }
-
 
 .aside-title {
     margin: 0;
@@ -166,6 +166,8 @@
     cursor: pointer;
     transition: 0.2s ease
 }
+
+
 
 .aside-category .page-container .page {
     font-size: 1.2rem;

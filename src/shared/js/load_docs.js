@@ -1,4 +1,9 @@
 
+function createAsideElements(doc, parent) {
+    const title = document.createElement("a");
+    title.textContent = doc.name;
+}
+
 export async function loadAside(projectID) {
     const projects_links = await fetch("/docs/_docpages.json");
     const projects_path = await projects_links.json();
