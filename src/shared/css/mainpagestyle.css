@@ -1,9 +1,5 @@
-
-
-.dark-mode {
-    background-color: white;
-    color: var(--primary-background-colour);
-    transition: 0.5s;
+html {
+  font-size: clamp(10px, 2vw, 16px);
 }
 
 html, body {
@@ -110,28 +106,4 @@ body {
 
 .parallex-bottom {
     top: -100%
-}
-
-@media (max-width: 800px) {
-    html {
-      font-size: 14px
-    }
-}
-
-@media (max-width: 700px) {
-    html {
-      font-size: 12px
-    }
-}
-
-@media (max-width: 600px) {
-    html {
-      font-size: 10px
-    }
-}
-
-@media (max-width: 500px) {
-    html {
-      font-size: 8px
-    }
 }
