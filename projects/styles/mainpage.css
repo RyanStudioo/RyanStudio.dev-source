@@ -80,20 +80,3 @@ body {
 .projects-info p {
     font-size: 2rem;
 }
-
-@media (max-width: 760px) {
-  .article-container {
-    --size: 18rem; 
-    flex: none; 
-    min-width: calc(var(--size) * 1.1); 
-    flex-basis: 0;
-    flex-grow: 1;
-}
-  .article-container p {-webkit-line-clamp: 3}
-  .article-slider { 
-    padding: 3rem 2rem;
-    scroll-snap-type: none;
-    width: 100vw;
-    gap: 2rem;
-}
-}
