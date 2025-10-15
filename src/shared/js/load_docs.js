@@ -1,7 +1,30 @@
 
-function createAsideElements(doc, parent) {
+function createAsideElement(doc) {
+    const parent = document.createElement("li");
     const title = document.createElement("a");
+    parent.appendChild(title);
     title.textContent = doc.name;
+    title.classList.add("category-title");
+    if ("children" in doc) {
+        parent.classList.add("aside-category");
+        const subpages = document.createElement("ul");
+        parent.appendChild(subpages);
+        subpages.classList.add("page-container");
+
+        title.addEventListener("click", (event) => {
+            event.preventDefault();
+            parent.classList.toggle("open");
+        });
+
+        for (const subpage of doc.children) {
+
+            subpages.appendChild(createAsideElement(subpage))
+        }
+    } else {
+        title.href = doc.href;
+        parent.classList.add("page-title");
+    }
+    return parent
 }
 
 export async function loadAside(projectID) {
@@ -14,44 +37,11 @@ export async function loadAside(projectID) {
     document.getElementById("aside-title").textContent = name
     const asideContainer = document.getElementById("aside-container");
     for (const doc of aside) {
-        const parent = document.createElement("li");
-        asideContainer.appendChild(parent)
-        if (!("children" in doc)) {
-            const title = document.createElement("a");
-            title.href = doc.href;
-            title.textContent = doc.name;
-            parent.appendChild(title);
-            title.classList.add("category-title")
-            parent.classList.add("page-title");
-        } else {
-            const title = document.createElement("a");
-            title.textContent = doc.name;
-            title.classList.add("category-title")
-            const pages = document.createElement("ul");
-            pages.classList.add("page-container");
-            parent.classList.add("aside-category");
-            parent.appendChild(title)
-            parent.appendChild(pages)
-            for (const subpage of doc.children) {
-                const pageList = document.createElement("li");
-                const pageTitle = document.createElement("a");
-                pageList.appendChild(pageTitle);
-                pageTitle.href = subpage.href;;
-                pageTitle.textContent = subpage.name;
-                pages.appendChild(pageList);
-                pageTitle.classList.add("page");
-            }
-        };
+        asideContainer.appendChild(createAsideElement(doc))
+    };
 
-    }
-    const categories = document.querySelectorAll(".aside-category .category-title")
-    categories.forEach(element => {
-        element.addEventListener("click", (event => {
-            event.preventDefault()
-            element.parentElement.classList.toggle("open")
-        }))
-    })
-    }
+}
+    
 
 async function getNextPagePointer(projectID) {
     const currentPage = window.location.pathname

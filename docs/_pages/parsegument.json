@@ -19,7 +19,7 @@
                 {
                     "name":"test",
                     "children": [
-                        
+                        {"name": "test2", "href": "/docs/parsegument/api/test2.html" }
                     ]
                 }
             ]
