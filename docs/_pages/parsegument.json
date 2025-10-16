@@ -17,10 +17,12 @@
             "name": "API Reference",
             "children": [
                 {
-                    "name":"test",
-                    "children": [
-                        {"name": "test2", "href": "/docs/parsegument/api/test2.html" }
-                    ]
+                    "name":"Decorators",
+                    "href": "/docs/parsegument/apireference/decorators.html"
+
+                },
+                {
+                    "name": "Nodes"
                 }
             ]
         },

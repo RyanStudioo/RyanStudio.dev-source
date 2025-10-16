@@ -42,6 +42,16 @@ export async function loadAside(projectID) {
 
 }
     
+function iterateAside(flatPages, project) {
+    if ("children" in project) {
+            for (const page of project.children) {
+                iterateAside(flatPages, page)
+            }
+        } else {
+            flatPages.push(project.href)
+        }
+    return flatPages
+}
 
 async function getNextPagePointer(projectID) {
     const currentPage = window.location.pathname
@@ -52,13 +62,7 @@ async function getNextPagePointer(projectID) {
     const aside = project_page.aside;
     var flatPages = [];
     for (const project of aside) {
-        if ("children" in project) {
-            for (const page of project.children) {
-                flatPages.push(page.href)
-            }
-        } else {
-            flatPages.push(project.href)
-        }
+        flatPages = iterateAside(flatPages, project)
     };
     var page = flatPages.indexOf(currentPage);
     if (page < flatPages.length - 1) {
