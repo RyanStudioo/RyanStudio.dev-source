@@ -1,6 +1,7 @@
 
 function createAsideElement(doc) {
     const parent = document.createElement("li");
+    parent.id = doc.name.replace(/\s+/g, '-').toLowerCase();
     const title = document.createElement("a");
     parent.appendChild(title);
     title.textContent = doc.name;
@@ -17,7 +18,6 @@ function createAsideElement(doc) {
         });
 
         for (const subpage of doc.children) {
-
             subpages.appendChild(createAsideElement(subpage))
         }
     } else {

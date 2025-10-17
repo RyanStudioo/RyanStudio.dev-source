@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/src/shared/js/baseurl.js"></script>
+    <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
+
+
+    <meta name="google-adsense-account" content="ca-pub-8030717046519441">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <title>Documentation - RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/docs/style/docstyles.css">
+</head>
+<body>
+    <script src="/src/shared/js/load_ui.js" type="module"></script>
+    <script src="/src/shared/js/load_docs.js" type="module"></script>
+    <div id="nav-bar"></div>
+    <main id="main">
+        <aside id="aside" class="aside">
+            <h2 class="aside-title" id="aside-title"></h2>
+            <ul class="aside-container" id="aside-container">
+            </ul>
+        </aside>
+        <article class="main-article">
+            <h1>Base Classes</h1>
+            <section>
+                <h2>Description</h2>
+                <p>
+                    Base classes shouldn't be used directly. They are designed to be inherited by other classes to provide common functionality and structure.<br>
+                    They can, however, be used for type checking and typing hinting purposes
+                </p>
+            </section>
+            <section>
+                <h2><code>BaseGroup</code> Class</h2>
+                <p>
+                    Base class for <code>Parsegumenter</code> and <code>CommandGroup</code>.
+                    <div>
+                        <h3>Attributes</h3>
+                        <ul>
+                            <li><strong>name</strong> (str) - The name of the <code>BaseGroup</code>.</li>
+                            <li><strong>children</strong> (dict) - A dictionary of children</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Methods</h3>
+                        <ul class="methods-list">
+                            <li>
+                                <h4><code>BaseGroup._get_methods</code> (classmethod)</h4>
+                                <div class="method-info">
+                                    <p>Returns a set of all non-dunder and non-private methods inside the class</p>
+                                    <div>
+                                        <h5>Parameters</h5>
+                                        <ul>
+                                            <li>cls (<code>BaseGroup</code>) - The class object.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5>Returns</h5>
+                                        <p>set[str]</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h4><code>BaseGroup().add_child</code></h4>
+                                <div class="method-info">
+                                    <p>Adds a child to self.children if a node of the similar name has not been added</p>
+                                    <div>
+                                        <h5>Parameters</h5>
+                                        <ul>
+                                            <li>child (Union[Command, CommandGroup]) - The child you want to add</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5>Returns</h5>
+                                        <p>bool - Returns True if the child was added, False otherwise</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </p>
+            </section>
+            <section>
+                <h2><code>Parameter</code> Class</h2>
+                <p>
+                    Base class for all parameters such as Arguments, Flags, and Operands
+                    <div>
+                        <h3>Attributes</h3>
+                        <ul>
+                            <li><strong>name</strong> (str) - The name of the parameter.</li>
+                            <li><strong>arg_type</strong> (str) - The datatype of the parameter.</li>
+                        </ul>
+                    </div>
+                </p>
+            </section>
+        </article>
+        
+        
+    </main>
+    <script type="module">
+        import {loadUI} from '/src/shared/js/load_ui.js';
+        import {loadAside, loadNextPagePointer} from '/src/shared/js/load_docs.js'
+        loadUI(false);
+        await loadAside("parsegument")
+        await loadNextPagePointer("parsegument")
+   </script>
+</body>
+</html>

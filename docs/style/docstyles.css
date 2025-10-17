@@ -211,6 +211,7 @@
 .main-article h2,
 .main-article h3,
 .main-article h4,
+.main-article h5,
 .main-article p {
     text-align: left;
     position: static;
@@ -235,6 +236,10 @@
 
 .main-article h4 {
     font-size: 1.5rem;
+}
+
+.main-article h5 {
+    font-size: 1.3rem;
 }
 
 .main-article p {
@@ -272,8 +277,20 @@
 }
 
 .main-article code {
-    font-size: 1rem;
+    font-size: inherit;
     background-color: var(--diminished-background-colour);
     padding: 0.2rem;
     border-radius: 0.5rem;
+}
+
+.methods-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.method-info {
+    margin-left: 0.5rem;
+    padding-left: 2rem;
+    border-left: 2px solid var(--translucent-text-colour);
 }

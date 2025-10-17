@@ -22,7 +22,8 @@
 
                 },
                 {
-                    "name": "Nodes"
+                    "name": "Base Classes",
+                    "href": "/docs/parsegument/apireference/baseclasses.html"
                 }
             ]
         },

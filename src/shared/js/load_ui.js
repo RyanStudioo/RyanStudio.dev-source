@@ -126,5 +126,28 @@ function toggleTheme(){
     }
 }
 
+function saveState(page, key, value) {
+  const states = sessionStorage.getItem('ui-states');
+  let uiStates = states ? JSON.parse(states) : {};
+  uiStates[page][key] = value;
+  sessionStorage.setItem('ui-states', JSON.stringify(uiStates));
+}
+
+function getState(page, key=null) {
+  const states = sessionStorage.getItem('ui-states');
+  if (!states) return null;
+  if (!states in page) return null;
+  if (key) {
+    if (!key in states[page]) return null;
+    return states[page][key];
+    }
+  return states[page];
+}
+
+export function initialiseStates() {
+  const currentPage = window.location.pathname;
+  console.log(currentPage)
+}
+
 window.loadUI = loadUI;
 window.toggleTheme = toggleTheme;
