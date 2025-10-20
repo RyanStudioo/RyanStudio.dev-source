@@ -16,15 +16,14 @@
         {
             "name": "API Reference",
             "children": [
-                {
-                    "name":"Decorators",
-                    "href": "/docs/parsegument/apireference/decorators.html"
-
-                },
-                {
-                    "name": "Base Classes",
-                    "href": "/docs/parsegument/apireference/baseclasses.html"
-                }
+              {
+                "name": "Base Classes",
+                "href": "/docs/parsegument/apireference/baseclasses.html"
+              },
+              {
+                "name": "Decorators",
+                "href": "/docs/parsegument/apireference/decorators.html"
+              }
             ]
         },
         {
