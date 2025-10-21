@@ -21,6 +21,10 @@
                 "href": "/docs/parsegument/apireference/baseclasses.html"
               },
               {
+                "name": "Parameter Classes",
+                "href": "/docs/parsegument/apireference/parameters.html"
+              },
+              {
                 "name": "Decorators",
                 "href": "/docs/parsegument/apireference/decorators.html"
               }
