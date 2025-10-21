@@ -39,13 +39,42 @@
                 </p>
             </section>
             <section>
-                <h2><code>BaseGroup</code> Class</h2>
+                <h2 id="Node"><code>Node</code> Class</h2>
                 <div>
+                    The Base class for all Parsegument classes.
+                    <div>
+                        <h3>Attributes</h3>
+                        <ul>
+                            <li id="Node.name"><strong>name</strong>(str) - The name of the <code>Node</code></li>
+                            <li id="Node.help"><strong>help</strong>(str) - The help message for the <code>Node</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 id="CommandNode"><code>CommandNode(<span class="bracketed">Node</span>)</code> Class</h2>
+                <div>
+                    Inherited from <code>Node</code> Class<br>
+                    Used to distinguish <code>Command</code> and <code>BaseGroup</code> from <code>Parameter</code>
+                    <div>
+                        <h3>Attributes</h3>
+                        <ul>
+                            <li><strong>name</strong>(str) - same as <a href="#Node.name">Node.name</a></li>
+                            <li><strong>help</strong>(str) - same as <a href="#Node.help">Node.help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2><code>BaseGroup(<span class="bracketed">CommandNode</span>)</code> Class</h2>
+                <div>
+                    Inherited from <code>CommandNode</code> class<br>
                     Base class for <code>Parsegumenter</code> and <code>CommandGroup</code>.
                     <div>
                         <h3>Attributes</h3>
                         <ul>
-                            <li><strong>name</strong> (str) - The name of the <code>BaseGroup</code>.</li>
+                            <li><strong>name</strong>(str) - same as <a href="#Node.name">Node.name</a></li>
+                            <li><strong>help</strong>(str) - same as <a href="#Node.help">Node.help</a></li>
                             <li><strong>children</strong> (dict) - A dictionary of children</li>
                         </ul>
                     </div>
@@ -53,23 +82,7 @@
                         <h3>Methods</h3>
                         <ul class="methods-list">
                             <li>
-                                <h4><code>BaseGroup._get_methods</code> (classmethod)</h4>
-                                <div class="method-info">
-                                    <p>Returns a set of all non-dunder and non-private methods inside the class</p>
-                                    <div>
-                                        <h5>Parameters</h5>
-                                        <ul>
-                                            <li>cls (<code>BaseGroup</code>) - The class object.</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h5>Returns</h5>
-                                        <p>set[str]</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <h4><code>BaseGroup().add_child</code></h4>
+                                <h4><code>BaseGroup().add_child(<span class="bracketed">child: Union[Command, CommandGroup]</span>)</code></h4>
                                 <div class="method-info">
                                     <p>Adds a child to self.children if a node of the similar name has not been added</p>
                                     <div>
@@ -84,18 +97,40 @@
                                     </div>
                                 </div>
                             </li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Decorators</h3>
+                        <ul>
+                            <li>
+                                <h4><code>@BaseGroup().command(<span class="bracketed">name: str=None, help: str=None</span>)</code></h4>
+                                <div>
+                                    <p>A Decorator that automatically creates a <code>Command</code> based on the function name,
+                                        parameters, and their annotation</p>
+                                    <div class="method-info">
+                                        <h5>Parameters</h5>
+                                        <ul>
+                                            <li><strong>name</strong> (str) - Replaces the name of the function</li>
+                                            <li><strong>help</strong> (str) - The help message for the function</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
             <section>
-                <h2><code>Parameter</code> Class</h2>
+                <h2 id="Parameter"><code>Parameter(<span class="bracketed">Node</span>)</code> Class</h2>
                 <div>
+                    Inherited from <code>Node</code> class<br>
                     Base class for all parameters such as Arguments, Flags, and Operands
                     <div>
                         <h3>Attributes</h3>
                         <ul>
-                            <li><strong>name</strong> (str) - The name of the parameter.</li>
+                            <li><strong>name</strong>(str) - same as <a href="#Node.name">Node.name</a></li>
+                            <li><strong>help</strong>(str) - same as <a href="#Node.help">Node.help</a></li>
                             <li><strong>arg_type</strong> (str) - The datatype of the parameter.</li>
                         </ul>
                     </div>

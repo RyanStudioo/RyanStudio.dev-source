@@ -298,3 +298,14 @@
     padding-left: 2rem;
     border-left: 2px solid var(--translucent-text-colour);
 }
+
+.bracketed {
+    font-size: 80%;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+a {
+    color: var(--primary-link-colour);
+    text-decoration: none;
+}
