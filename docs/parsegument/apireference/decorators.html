@@ -32,18 +32,73 @@
         <article class="main-article">
             <h1>Decorators</h1>
             <section>
-                <h2><code>@CommandGroup.command(<span class="bracketed">name: str, help: str</span>)</code></h2>
-                <p>
-                    This decorator automatically creates a Command from a function, and adds it to
-                    the CommandGroup it is called from.
-                </p>
+                <h2>Usage</h2>
+<pre class="code-block"><code>parser = parsegument.Parsegumenter()
+
+# Add parameter decorators below the command decorator
+@parser.command()
+@parsegument.argument(name="bar", arg_type: int, help="something something")
+def foo(bar: str): ...
+</code></pre>
             </section>
             <section>
-                <h2>@Parsegumenter.command</h2>
-                <p>
-                    This decorator automatically creates a Command from a function, and adds it to
-                    the Parsegumenter it is called from.
-                </p>
+                <h2 id="command-decorators">Command Decorators</h2>
+                <div>
+                    These decorators automatically create a command based on the function's name, parameters, and annotations, then creates a <code>Command</code><br>
+                    <h3><code>@CommandGroup().command(<span class="bracketed">name: str = None, help: str = None</span>)</code></h3>
+                    <h3><code>@Parsegumenter().command(<span class="bracketed">name: str = None, help: str = None</span>)</code></h3>
+                    <div>
+                        Same as <a href="/docs/parsegument/apireference/baseclasses.html#BaseGroup.command()"><code>@BaseGroup.command()</code></a>
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <h2>Parameter Decorators</h2>
+                <div>
+                    Overwrites any pre-made parameters after using <a href="/docs/parsegument/apireference/decorators.html#command-decorators">Command Decorators</a>
+                    <h3 id="parsegument.argument()"><code>@parsegument.argument(<span class="bracketed">name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
+                    <div>
+                        Overwrites any pre-made arguments with the defined argument
+                        <div>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li><strong>name</strong> (str) - The name of the parameter</li>
+                                <li><strong>arg_type</strong> (Optional[type]) - Overrides the type of the parameter</li>
+                                <li><strong>help</strong> (str) - The help message</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h3 id="parsegument.flag()"><code>@parsegument.flag(<span class="bracketed">name: str, help: str=None</span>)</code></h3>
+                    <div>
+                        Overwrites any pre-made keyword arguments with the defined flag
+                        <div>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li><strong>name</strong> (str) - The name of the parameter</li>
+                                <li><strong>help</strong> (str) - The help message</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h3 id="parsegument.operand()"><code>@parsegument.operand(<span class="bracketed">name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
+                    <div>
+                        Overwrites any pre-made keyword arguments with the defined operand
+                        <div>
+                            <h4>Parameters</h4>
+                            <ul>
+                                <li><strong>name</strong> (str) - The name of the parameter</li>
+                                <li><strong>arg_type</strong> (Optional[type]) - Overrides the type of the parameter</li>
+                                <li><strong>help</strong> (str) - The help message</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
         </article>
     </main>
