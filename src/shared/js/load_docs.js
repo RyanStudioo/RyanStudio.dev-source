@@ -1,5 +1,5 @@
 
-function createAsideElement(doc) {
+function createAsideElement(projectID, doc) {
     const parent = document.createElement("li");
     parent.id = doc.name.replace(/\s+/g, '-').toLowerCase();
     const title = document.createElement("a");
@@ -15,10 +15,11 @@ function createAsideElement(doc) {
         title.addEventListener("click", (event) => {
             event.preventDefault();
             parent.classList.toggle("open");
+            writeAsideBar(projectID, parent.id)
         });
 
         for (const subpage of doc.children) {
-            subpages.appendChild(createAsideElement(subpage))
+            subpages.appendChild(createAsideElement(projectID, subpage))
         }
     } else {
         title.href = doc.href;
@@ -37,8 +38,9 @@ export async function loadAside(projectID) {
     document.getElementById("aside-title").textContent = name
     const asideContainer = document.getElementById("aside-container");
     for (const doc of aside) {
-        asideContainer.appendChild(createAsideElement(doc))
+        asideContainer.appendChild(createAsideElement(projectID, doc))
     }
+    await openAsideBar(projectID);
 
 }
     
@@ -103,8 +105,37 @@ async function setPageTitle(projectID) {
     document.title = `${page.name} - ${project_page.name}`;
 }
 
+import {readPageDetails} from '/src/shared/js/storage.js'
+
+export async function openAsideBar(projectID) {
+    const docDetails = readPageDetails("docs");
+    if (!projectID in docDetails) {return null}
+    const projectDetails = docDetails[projectID];
+    for (const page of projectDetails) {
+        document.getElementById(page).classList.add("open");
+    }
+}
+
+export function writeAsideBar(projectID, toggleID) {
+    let pageDetails = JSON.parse(sessionStorage.getItem("pageDetails"));
+    if (!pageDetails) {pageDetails = {}}
+    if (!pageDetails["docs"]) {pageDetails["docs"] = {};}
+    if (!pageDetails["docs"][projectID]) {pageDetails["docs"][projectID] = [];}
+    const arr = pageDetails.docs[projectID];
+    if (!arr.includes(toggleID)) {
+        arr.push(toggleID);
+    } else {
+        pageDetails.docs[projectID] = arr.filter(item => item !== toggleID);
+    }
+    sessionStorage.setItem("pageDetails", JSON.stringify(pageDetails));
+}
+
 export async function loadDocPage(projectID) {
+    await setPageTitle(projectID);
     await loadAside(projectID);
     await loadNextPagePointer(projectID);
-    await setPageTitle(projectID);
+
 }
+
+
+
