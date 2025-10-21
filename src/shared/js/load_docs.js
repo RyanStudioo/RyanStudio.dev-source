@@ -38,7 +38,7 @@ export async function loadAside(projectID) {
     const asideContainer = document.getElementById("aside-container");
     for (const doc of aside) {
         asideContainer.appendChild(createAsideElement(doc))
-    };
+    }
 
 }
     
@@ -48,26 +48,31 @@ function iterateAside(flatPages, project) {
                 iterateAside(flatPages, page)
             }
         } else {
-            flatPages.push(project.href)
+            flatPages.push(project)
         }
     return flatPages
 }
 
-async function getNextPagePointer(projectID) {
-    const currentPage = window.location.pathname
-    var pages = await fetch("/docs/_docpages.json");
+async function flattenPages(projectID) {
+    let pages = await fetch("/docs/_docpages.json");
     pages = await pages.json();
-    var project_page = await fetch(pages[projectID].path);
+    let project_page = await fetch(pages[projectID].path);
     project_page = await project_page.json();
     const aside = project_page.aside;
-    var flatPages = [];
+    let flatPages = [];
     for (const project of aside) {
         flatPages = iterateAside(flatPages, project)
-    };
-    var page = flatPages.indexOf(currentPage);
+    }
+    return flatPages;
+}
+
+async function getNextPagePointer(projectID) {
+    const currentPage = window.location.pathname
+    let flatPages = await flattenPages(projectID);
+    flatPages = flatPages.map(page => page.href)
+    const page = flatPages.indexOf(currentPage);
     if (page < flatPages.length - 1) {
-        const nextPage = flatPages[page + 1];
-        return nextPage
+        return flatPages[page + 1]
     } else {
         return null
     }
@@ -83,4 +88,23 @@ export async function loadNextPagePointer(projectID) {
     nextPagePointer.href = nextPage;
     nextPagePointer.textContent = "Next Page >";
     document.querySelector(".main-article").appendChild(section);
+}
+
+async function setPageTitle(projectID) {
+    const pages = await flattenPages(projectID);
+    const windowLocation = window.location.pathname
+    const page = pages.find(page => page.href === windowLocation)
+
+    let response = await fetch("/docs/_docpages.json");
+    response = await response.json();
+    let project_page = await fetch(response[projectID].path);
+    project_page = await project_page.json();
+
+    document.title = `${page.name} - ${project_page.name}`;
+}
+
+export async function loadDocPage(projectID) {
+    await loadAside(projectID);
+    await loadNextPagePointer(projectID);
+    await setPageTitle(projectID);
 }
