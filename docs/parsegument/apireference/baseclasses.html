@@ -46,7 +46,7 @@
                         <h3>Attributes</h3>
                         <ul>
                             <li id="Node.name"><strong>name</strong>(str) - The name of the <code>Node</code></li>
-                            <li id="Node.help"><strong>help</strong>(str) - The help message for the <code>Node</code></li>
+                            <li id="Node.help"><strong>help</strong>(Optional[str]) - The help message for the <code>Node</code></li>
                         </ul>
                     </div>
                 </div>
@@ -59,8 +59,10 @@
                     <div>
                         <h3>Attributes</h3>
                         <ul>
-                            <li><strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a></li>
-                            <li><strong>help</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
+                            <li>
+                                <strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a>
+                            </li>
+                            <li><strong>help</strong>(Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +76,7 @@
                         <h3>Attributes</h3>
                         <ul>
                             <li><strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a></li>
-                            <li><strong>help</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
+                            <li><strong>help</strong>(Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
                             <li id="BaseGroup.children"><strong>children</strong> (dict) - A dictionary of children</li>
                         </ul>
                     </div>
@@ -112,7 +114,7 @@
                                         <h5>Parameters</h5>
                                         <ul>
                                             <li><strong>name</strong> (str) - Replaces the name of the function</li>
-                                            <li><strong>help</strong> (str) - The help message for the function</li>
+                                            <li><strong>help</strong> (Optional[str]) - The help message for the function</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -130,8 +132,8 @@
                         <h3>Attributes</h3>
                         <ul>
                             <li><strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a></li>
-                            <li><strong>help</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
-                            <li><strong>arg_type</strong> (str) - The datatype of the parameter.</li>
+                            <li><strong>help</strong>(Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
+                            <li><strong>arg_type</strong> (type=str) - The datatype of the parameter.</li>
                         </ul>
                     </div>
                 </div>

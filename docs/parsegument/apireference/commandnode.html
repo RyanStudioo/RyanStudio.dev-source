@@ -29,13 +29,29 @@
         </ul>
     </aside>
     <article class="main-article">
-        <h1>CommandNode</h1>
+        <h1>CommandNodes</h1>
         <section>
             <h2>Description</h2>
             <p>
                 <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.CommandNode"><code>CommandNode</code></a>
-                is the base class used for <a><code>Command</code></a> and <a><code>BaseGroup</code></a>
+                is the base class used for <a><code>Command</code></a> and
+                <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.BaseGroup"><code>BaseGroup</code></a>,
+                it is used for any non-parameter nodes
             </p>
+        </section>
+        <section>
+            <h2 id="parsegument.Command"><code>parsegument.Command(<span class="bracketed">CommandNode</span>)</code></h2>
+            <div>
+                Inherited from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.CommandNode"><code>CommandNode</code></a><br>
+                Commands are linked to functions, and accept parameters
+                <h3>Parameters</h3>
+                <ul>
+                    <li><strong>name</strong> (str) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                    <li><strong>executable</strong> (Callable) - function that's executed when the command is called</li>
+                    <li><strong>help</strong> (Optional[str]) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
+
+                </ul>
+            </div>
         </section>
     </article>
 
