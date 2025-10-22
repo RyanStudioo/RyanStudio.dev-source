@@ -25,6 +25,10 @@
                 "href": "/docs/parsegument/apireference/parameters.html"
               },
               {
+                "name": "Command Nodes",
+                "href": "/docs/parsegument/apireference/commandnode.html"
+              },
+              {
                 "name": "Decorators",
                 "href": "/docs/parsegument/apireference/decorators.html"
               }
