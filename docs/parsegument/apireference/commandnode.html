@@ -44,13 +44,36 @@
             <div>
                 Inherited from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.CommandNode"><code>CommandNode</code></a><br>
                 Commands are linked to functions, and accept parameters
-                <h3>Parameters</h3>
-                <ul>
-                    <li><strong>name</strong> (str) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
-                    <li><strong>executable</strong> (Callable) - function that's executed when the command is called</li>
-                    <li><strong>help</strong> (Optional[str]) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
-
-                </ul>
+                <div>
+                    <h3>Parameters</h3>
+                    <ul>
+                        <li><strong>name</strong> (str) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                        <li><strong>executable</strong> (Callable) - function that's executed when the command is called</li>
+                        <li><strong>parameters</strong> (dict) - Defined Arguments and Keyword Arguments of the Command</li>
+                        <li><strong>help</strong> (Optional[str]) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Methods</h3>
+                    <ul class="methods-list">
+                        <li>
+                            <h4><code>add_parameter(<span class="bracketed">self, param: Union[Argument, Operand, Flag]</span>) -> None</code></h4>
+                            <div class="method-info">
+                                <p>Adds a parameter to the command</p>
+                                <div>
+                                    <h5>Parameters</h5>
+                                    <ul>
+                                        <li><strong>param</strong> (Union[Argument, Operand, Flag]) - The param you want to add to </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Returns</h5>
+                                    <p>None</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </article>

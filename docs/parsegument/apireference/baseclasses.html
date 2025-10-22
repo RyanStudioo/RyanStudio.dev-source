@@ -75,8 +75,8 @@
                     <div>
                         <h3>Attributes</h3>
                         <ul>
-                            <li><strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a></li>
-                            <li><strong>help</strong>(Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
+                            <li><strong>name</strong> (str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                            <li><strong>help</strong> (Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
                             <li id="BaseGroup.children"><strong>children</strong> (dict) - A dictionary of children</li>
                         </ul>
                     </div>
@@ -84,7 +84,7 @@
                         <h3>Methods</h3>
                         <ul class="methods-list">
                             <li>
-                                <h4><code>add_child(<span class="bracketed">child: Union[Command, CommandGroup]</span>)</code></h4>
+                                <h4><code>add_child(<span class="bracketed">self, child: Union[Command, CommandGroup]</span>)</code></h4>
                                 <div class="method-info">
                                     <p>Adds a child to self.children if a node of the similar name has not been added</p>
                                     <div>
@@ -106,7 +106,7 @@
                         <h3>Decorators</h3>
                         <ul>
                             <li>
-                                <h4 id="BaseGroup.command()"><code>@BaseGroup().command(<span class="bracketed">name: str=None, help: str=None</span>)</code></h4>
+                                <h4 id="BaseGroup.command()"><code>@BaseGroup().command(<span class="bracketed">self, name: str=None, help: str=None</span>)</code></h4>
                                 <div>
                                     <p>A Decorator that automatically creates a <code>Command</code> based on the function name,
                                         parameters, and their annotation, then adds it to <a href="/docs/parsegument/apireference/baseclasses.html#BaseGroup.children"><code>self.children</code></a></p>
@@ -131,8 +131,8 @@
                     <div>
                         <h3>Attributes</h3>
                         <ul>
-                            <li><strong>name</strong>(str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name">Node.name</a></li>
-                            <li><strong>help</strong>(Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help">Node.help</a></li>
+                            <li><strong>name</strong> (str) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                            <li><strong>help</strong> (Optional[str]) - same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
                             <li><strong>arg_type</strong> (type=str) - The datatype of the parameter.</li>
                         </ul>
                     </div>

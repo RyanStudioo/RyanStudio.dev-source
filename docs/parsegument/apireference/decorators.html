@@ -45,8 +45,8 @@ def foo(bar: str): ...
                 <h2 id="command-decorators">Command Decorators</h2>
                 <div>
                     These decorators automatically create a command based on the function's name, parameters, and annotations, then creates a <code>Command</code><br>
-                    <h3><code>@CommandGroup().command(<span class="bracketed">name: str = None, help: str = None</span>)</code></h3>
-                    <h3><code>@Parsegumenter().command(<span class="bracketed">name: str = None, help: str = None</span>)</code></h3>
+                    <h3><code>@CommandGroup().command(<span class="bracketed">self, name: str = None, help: str = None</span>)</code></h3>
+                    <h3><code>@Parsegumenter().command(<span class="bracketed">self, name: str = None, help: str = None</span>)</code></h3>
                     <div>
                         Same as <a href="/docs/parsegument/apireference/baseclasses.html#BaseGroup.command()"><code>@BaseGroup.command()</code></a>
                     </div>
@@ -57,7 +57,7 @@ def foo(bar: str): ...
                 <h2>Parameter Decorators</h2>
                 <div>
                     Overwrites any pre-made parameters after using <a href="/docs/parsegument/apireference/decorators.html#command-decorators">Command Decorators</a>
-                    <h3 id="parsegument.argument()"><code>@parsegument.argument(<span class="bracketed">name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
+                    <h3 id="parsegument.argument()"><code>@parsegument.argument(<span class="bracketed">self, name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
                     <div>
                         Overwrites any pre-made arguments with the defined argument
                         <div>
@@ -72,7 +72,7 @@ def foo(bar: str): ...
                 </div>
                 <hr>
                 <div>
-                    <h3 id="parsegument.flag()"><code>@parsegument.flag(<span class="bracketed">name: str, help: str=None</span>)</code></h3>
+                    <h3 id="parsegument.flag()"><code>@parsegument.flag(<span class="bracketed">self, name: str, help: str=None</span>)</code></h3>
                     <div>
                         Overwrites any pre-made keyword arguments with the defined flag
                         <div>
@@ -86,7 +86,7 @@ def foo(bar: str): ...
                 </div>
                 <hr>
                 <div>
-                    <h3 id="parsegument.operand()"><code>@parsegument.operand(<span class="bracketed">name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
+                    <h3 id="parsegument.operand()"><code>@parsegument.operand(<span class="bracketed">self, name: str, arg_type: Optional[type]=None, help: str=None</span>)</code></h3>
                     <div>
                         Overwrites any pre-made keyword arguments with the defined operand
                         <div>
