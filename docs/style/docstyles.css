@@ -199,6 +199,7 @@
     flex: 1 1 auto;
     padding: 0rem 4rem;
     max-width: 50vw;
+    overflow-wrap: break-word;
 }
 
 .next-page {

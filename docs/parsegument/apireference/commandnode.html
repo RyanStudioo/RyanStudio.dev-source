@@ -40,6 +40,94 @@
             </p>
         </section>
         <section>
+            <h2 id="parsegument.Parsegumenter"><code>parsegument.Parsegumenter(<span class="bracketed">BaseGroup</span>)</code></h2>
+            <div>
+                <p>
+                    Inherits from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.BaseGroup"><code>BaseGroup</code></a><br>
+                    Main Manager for <a href="/docs/parsegument/apireference/commandnode.html#parsegument.CommandGroup"><code>CommandGroup</code></a> and <a href="/docs/parsegument/apireference/commandnode.html#parsegument.CommandGroup"><code>Command</code></a><br>
+                    You should use this for execution, CLI running, as well as a general manager
+                </p>
+                <div>
+                    <h3>Attributes</h3>
+                    <ul>
+                        <li><strong>name</strong> (str) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                        <li><strong>children</strong> (dict) - stores Command or CommandGroup linked with the CommandGroup</li>
+                        <li><strong>prefix</strong></li> (Optional[str]) - checks if an entered command begins with a certain prefix
+                        <li><strong>help</strong> (Optional[str]) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Methods</h3>
+                    <ul class="methods-list">
+                        <li>
+                            <h4 id="Parsegument.execute"><code>execute(<span class="bracketed">self, command:Union[str, list[str]]</span>) -> Union[Any, None]</code></h4>
+                            <div class="method-info">
+                                <p>Checks if a child with the name of the first list item exists, then executes the child<br>
+                                    It will also automatically check if it is valid with the prefix and name
+                                </p>
+                                <div>
+                                    <h5>Parameters</h5>
+                                    <ul>
+                                        <li><strong>command</strong> (Union[str, list[str]]) - Either a raw string of a command, or a list of parameters for a command</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Returns</h5>
+                                    <p>Any - returns any value returned by a function</p>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+                            <h4><code>run(<span class="bracketed">self</span>)</code></h4>
+                            <div class="method-info">
+                                <p>
+                                    Reads arguments from the terminal when running the python script, then performs
+                                    <a href="/docs/parsegument/apireference/commandnode.html#Parsegument.execute"><code>Parsegumemter.execute</code></a> on the input
+
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 id="parsegument.CommandGroup"><code>parsegument.CommandGroup(<span class="bracketed">BaseGroup</span>)</code></h2>
+            <div>
+                CommandGroups are used to group
+                <a href="/docs/parsegument/apireference/commandnode.html#parsegument.Command"><code>Command</code></a>
+                and other <code>CommandGroup</code> together
+                <div>
+                    <h3>Attributes</h3>
+                    <ul>
+                        <li><strong>name</strong> (str) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.name"><code>Node.name</code></a></li>
+                        <li><strong>children</strong> (dict) - stores Command or CommandGroup linked with the CommandGroup</li>
+                        <li><strong>help</strong> (Optional[str]) - Same as <a href="/docs/parsegument/apireference/baseclasses.html#Node.help"><code>Node.help</code></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Methods</h3>
+                    <ul class="methods-list">
+                        <li>
+                            <h4><code>initialise(<span class="bracketed">self</span>) -> None</code></h4>
+                            <div class="method-info">
+                                <p>
+                                    Only use this if creating a child class of <code>CommandGroup</code><br>
+                                    This automatically creates <code>Command</code>s of methods added in a child class
+                                </p>
+                                <div>
+                                    <h5>Returns</h5>
+                                    <p>None</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
             <h2 id="parsegument.Command"><code>parsegument.Command(<span class="bracketed">CommandNode</span>)</code></h2>
             <div>
                 Inherited from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.CommandNode"><code>CommandNode</code></a><br>
@@ -76,6 +164,7 @@
                 </div>
             </div>
         </section>
+
     </article>
 
 
