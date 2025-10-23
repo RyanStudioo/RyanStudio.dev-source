@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/src/shared/js/baseurl.js"></script>
+    <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
+
+
+    <meta name="google-adsense-account" content="ca-pub-8030717046519441">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Documentation - RyanStudio.dev</title>
+    <link rel="icon" href="/src/images/icons/icon.ico">
+
+
+    <link rel="stylesheet" href="/src/shared/css/root.css">
+    <link rel="stylesheet" href="/src/shared/css/mainpagestyle.css">
+    <link rel="stylesheet" href="/docs/style/docstyles.css">
+</head>
+<body>
+<script src="/src/shared/js/load_ui.js" type="module"></script>
+<script src="/src/shared/js/load_docs.js" type="module"></script>
+<div id="nav-bar"></div>
+<main id="main">
+    <aside id="aside" class="aside">
+        <h2 class="aside-title" id="aside-title"></h2>
+        <ul class="aside-container" id="aside-container">
+        </ul>
+    </aside>
+    <article class="main-article">
+        <h1>Parameters</h1>
+        <section>
+            <h2><code>parsegument.Argument(<span class="bracketed">Parameter</span>)</code></h2>
+            <div>
+                Inherits from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter"><code>Parameter</code></a> Class<br>
+                Compulsory Arguments for a command
+                <div>
+                    <h3>Attributes</h3>
+                    <ul>
+                        <li><strong>name</strong>(str) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                        <li><strong>arg_type</strong> (type) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                        <li><strong>help</strong> (Optional[str]) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2><code>parsegument.Flag(<span class="bracketed">Parameter</span>)</code></h2>
+            <div>
+                Inherits from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter"><code>Parameter</code></a> Class<br>
+                Optional Boolean keyword argument (should be set as False on default)
+                <div>
+                    <h3>Attributes</h3>
+                    <ul>
+                        <li><strong>name</strong>(str) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                        <li><strong>arg_type</strong> (type) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a> but defaults to boolean
+                        </li>
+                        <li><strong>help</strong> (Optional[str]) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2><code>parsegument.Operand(<span class="bracketed">Parameter</span>)</code></h2>
+            <div>
+                Inherits from <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter"><code>Parameter</code></a> Class<br>
+                Optional keyword argument (any value can be set as default)
+                <div>
+                    <h3>Attributes</h3>
+                    <ul>
+                        <li><strong>name</strong>(str) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                        <li><strong>arg_type</strong> (type) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                        <li><strong>help</strong> (Optional[str]) - Same as
+                            <a href="/docs/parsegument/apireference/baseclasses.html#parsegument.Parameter">
+                                <code>Parameter</code>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+</main>
+<script type="module">
+    import {loadUI} from '/src/shared/js/load_ui.js';
+    import {loadDocPage} from '/src/shared/js/load_docs.js'
+    loadUI(false);
+    await loadDocPage("parsegument");
+</script>
+</body>
+</html>

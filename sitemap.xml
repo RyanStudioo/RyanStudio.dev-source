@@ -29,6 +29,11 @@
   <loc>https://www.ryanstudio.dev/projects/ratmod/</loc>
 </url>
 
+<!-- Doc Pages -->
+<url>
+    <loc>https://www.ryanstudio.dev/docs/parsegument/</loc>
+</url>
+
 <!-- Sub Domains -->
 
 <url>
@@ -44,3 +49,4 @@
   <loc>https://kofi.ryanstudio.dev/</loc>
 </url>
 </urlset>
+

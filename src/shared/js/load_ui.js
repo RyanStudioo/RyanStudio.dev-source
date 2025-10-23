@@ -1,4 +1,4 @@
-import {getTheme, setTheme} from '/src/shared/js/cookies.js';
+import {getTheme, setTheme} from '/src/shared/js/storage.js';
 
 function applySavedTheme() {
   const doc = document.documentElement
