@@ -314,3 +314,20 @@ a {
     color: var(--primary-link-colour);
     text-decoration: none;
 }
+
+section, .method-info, h2 {
+    overflow: visible;
+}
+
+a > code {
+    display: inline-block;
+    transform-origin: center;
+    transition: transform .15s ease;
+    position: relative;
+    z-index: 1;
+}
+
+a > code:hover {
+    transform: scale(1.03) !important;
+    color: var(--hovered-link-colour);
+}
