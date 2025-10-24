@@ -31,27 +31,29 @@
             <p>Here are some of my projects! Click on any of them to learn more..</p>
         </section>
 
-    <section id="articles-slider" class="article-slider">
-        <script src="/src/shared/js/load_projects.js" type="module"></script>
-        <script type="module">
-            import {loadArticles, createArticleSliderElement} from "/src/shared/js/load_projects.js";
-            const articles = await loadArticles();
-            console.log(articles);
-            const parent = document.getElementById("articles-slider");
-            for (const [key, value] of Object.entries(articles)) {
-                let new_element = createArticleSliderElement(value)
-            parent.appendChild(new_element);
-            }
+        <section id="articles-slider" class="article-slider">
+            <script src="/src/shared/js/load_projects.js" type="module"></script>
+            <script type="module">
+                import {loadArticles, createArticleSliderElement} from "/src/shared/js/load_projects.js";
+                const articles = await loadArticles();
+                console.log(articles);
+                const parent = document.getElementById("articles-slider");
+                for (const [key, value] of Object.entries(articles)) {
+                    let new_element = createArticleSliderElement(value)
+                    parent.appendChild(new_element);
+                }
+                parent.addEventListener("wheel", (event) => {
+                    event.preventDefault();
+                    parent.scrollBy({
+                        left: event.deltaY < 0 ? -30 : 30,
+                        behavior: 'smooth'
+                    })
+                })
 
-        const width = parent.offsetWidth
-        parent.addEventListener("wheel", (e) => {
-                e.preventDefault();
-                parent.scrollLeft += e.deltaY 
-            })
 
 
-            
-        </script>
+            </script>
+        </section>
     </article>
 </body>
 </html>

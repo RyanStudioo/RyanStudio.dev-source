@@ -10,6 +10,10 @@
             "href": "/docs/parsegument/concepts.html"
         },
         {
+            "name": "Parsegument Syntax",
+            "href": "/docs/parsegument/parsegument_syntax.html"
+        },
+        {
             "name": "Quick Start",
             "href": "/docs/parsegument/quickstart.html"
         },
