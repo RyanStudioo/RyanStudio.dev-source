@@ -40,7 +40,7 @@ export async function loadAside(projectID) {
     for (const doc of aside) {
         asideContainer.appendChild(createAsideElement(projectID, doc))
     }
-    await openAsideBar(projectID);
+    openAsideBar(projectID);
 
 }
     
@@ -110,8 +110,9 @@ async function setPageTitle(projectID) {
 
 import {readPageDetails} from '/src/shared/js/storage.js'
 
-export async function openAsideBar(projectID) {
+export function openAsideBar(projectID) {
     const docDetails = readPageDetails("docs");
+    if (!docDetails) {return null}
     if (!projectID in docDetails) {return null}
     const projectDetails = docDetails[projectID];
     for (const page of projectDetails) {
