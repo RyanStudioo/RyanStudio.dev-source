@@ -101,8 +101,11 @@ async function setPageTitle(projectID) {
     response = await response.json();
     let project_page = await fetch(response[projectID].path);
     project_page = await project_page.json();
+    try {
+        document.title = `${page.name} - ${project_page.name}`;
+    } catch {
+    }
 
-    document.title = `${page.name} - ${project_page.name}`;
 }
 
 import {readPageDetails} from '/src/shared/js/storage.js'
