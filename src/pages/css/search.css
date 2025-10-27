@@ -1,9 +1,9 @@
 #main {
     max-width: 60%;
+    min-width: 10%;
     justify-content: center;
     margin: auto;
 }
-
 
 .list-results {
     max-width: 60%;
@@ -67,7 +67,7 @@
 }
 
 .list-results div {
-  margin: 0px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -100,7 +100,7 @@
     width: fit-content;
     border-radius: 2rem;
     letter-spacing: -0.025em;
-    margin-left: 0rem !important;
+    margin-left: 0 !important;
     background-color: var(--diminished-background-colour);
     cursor: default;
 }
@@ -139,7 +139,7 @@
 .search-icon-search::before{
     font: var(--fa-font-solid);
     content: "\f002";
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 2rem;
     padding-right: 0.5rem;
     position: absolute;

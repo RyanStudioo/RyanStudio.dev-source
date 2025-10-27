@@ -45,8 +45,24 @@
                 "description": "Project Page for Rat Mod",
                 "tags": ["rat", "cheese", "fabric", "mod", "minecraft mod", "ratmod"],
                 "href": "/projects/ratmod"
+            },
+            {
+                "id": "projects-parsegument",
+                "title": "Parsegument",
+                "description": "Command Router and CLI builder for Python",
+                "tags": ["parsegument", "parser", "argument", "parsing", "python"],
+                "href": "/projects/parsegument"
             }
         ],
+    "docs": [
+        {
+            "id": "docs-parsegument",
+            "title": "Parsegument Docs",
+            "description": "Documentation for Parsegument, a Command Router and CLI builder for Python",
+            "tags": ["parsegument", "parser", "argument", "parsing", "python", "docs"],
+            "href": "docs/parsegument"
+        }
+    ],
     "sections": 
         [
             {
