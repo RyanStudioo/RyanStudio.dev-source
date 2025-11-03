@@ -31,6 +31,50 @@
         </aside>
         <article class="main-article">
             <section>
+                <h2>V0.3.0</h2>
+                <div>
+                    <a href="https://github.com/RyanStudioo/Parsegument/releases/tag/0.3.0">https://github.com/RyanStudioo/Parsegument/releases/tag/0.3.0</a>
+                    <h3>Change Logs</h3>
+                Parsegument v0.3.0 adds functionality for CLIs, gives you more control over decorated commands, as well as providing help messages!
+
+                <h3>Added</h3>
+                    <div>
+                        <h4>CLI Functionality</h4>
+                        <ul>
+                            <li>Parsegument can now be ran in your terminal by running your script with python: python script.py</li>
+                            <li>You can then run your Parsegumenter with Parsegumenter().run()</li>
+                        </ul>
+                        <h4>Parameter Decorators</h4>
+                        <ul>
+                            <li>
+                                You can now modify parameter's types and help messages using:
+                                <code><pre class="code-block">@parsegument.argument()
+@parsegument.flag()
+@parsegument.operand()</pre></code>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Help Messages</h4>
+                        <ul>
+                            <li>Parsegument now returns help messages documenting subcommands, parameters and provided descriptions</li>
+                            <li>Help messages can be triggered with the -help flag in any place of the command</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Changes</h3>
+                <ul>
+                    <li><code>BaseGroup().execute()</code> and <code>Command().execute()</code> have been replaced by <code>.forward()</code> in order to distinguish it with <code>Parsegumenter().execute()</code></li>
+                    <li><code>BaseGroup</code> and <code>Command</code> now inherit from a base <code>CommandNode</code>  class in order to distinguish it from <code>Parameter Nodes</code></li>
+                    <li><code>Node</code> class now has a help message attribute</li>
+                    <li>arg keyword replaced with param in parameters and attributes</li>
+                </ul>
+                <h3>Bug Fixes</h3>
+                <ul>
+                    <li><code>int</code> datatypes now convert strings to a float before converting it to an int</li>
+                </ul>
+            </section>
+            <section>
                 <h2>v0.2.0</h2>
                 <p>
                     <a href="https://github.com/RyanStudioo/Parsegument/releases/tag/0.2.0" class="para-link">https://github.com/RyanStudioo/Parsegument/releases/tag/0.2.0</a>
