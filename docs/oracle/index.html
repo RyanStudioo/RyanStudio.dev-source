@@ -8,7 +8,6 @@
     <meta name="google-adsense-account" content="ca-pub-8030717046519441">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
 
     <title>Documentation - RyanStudio.dev</title>
@@ -20,23 +19,32 @@
     <link rel="stylesheet" href="/docs/style/docstyles.css">
 </head>
 <body>
-    <script src="/src/shared/js/load_ui.js" type="module"></script>
-    <script src="/src/shared/js/load_docs.js" type="module"></script>
-    <div id="nav-bar"></div>
-    <main id="main">
-        <aside id="aside" class="aside">
-            <h2 class="aside-title" id="aside-title"></h2>
-            <ul class="aside-container" id="aside-container">
-            </ul>
-        </aside>
-        
-        
-    </main>
-    <script type="module">
-        import {loadUI} from '/src/shared/js/load_ui.js';
-        import {loadAside} from '/src/shared/js/load_docs.js'
-        loadUI(false);
-        await loadAside("oracle")
-   </script>
+<script src="/src/shared/js/load_ui.js" type="module"></script>
+<script src="/src/shared/js/load_docs.js" type="module"></script>
+<div id="nav-bar"></div>
+<main id="main">
+    <aside id="aside" class="aside">
+        <h2 class="aside-title" id="aside-title"></h2>
+        <ul class="aside-container" id="aside-container">
+        </ul>
+    </aside>
+    <article class="main-article">
+        <h1>Oracle AI</h1>
+        <section>
+            <h2>What is Oracle?</h2>
+            <p>
+                Oracle is an AI that is capable of long term memory, being able to learn from and remember different documents, stories, and more!
+            </p>
+        </section>
+    </article>
+
+
+</main>
+<script type="module">
+    import {loadUI} from '/src/shared/js/load_ui.js';
+    import {loadDocPage} from '/src/shared/js/load_docs.js'
+    loadUI(false);
+    await loadDocPage("oracle");
+</script>
 </body>
 </html>
